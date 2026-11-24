@@ -8,6 +8,8 @@ export const site = {
   contactEmail: '',
   // TODO: booking link (e.g. Cal.com) for the 30-minute diagnosis. Leave empty to hide.
   bookingUrl: '',
+  // Keep false until Impressum and privacy policy are complete: adds noindex to every page.
+  indexable: false,
 };
 
 export const locales = ['en', 'zh', 'de'] as const;

@@ -53,6 +53,7 @@ src/
 - [ ] `src/config.ts`: set `contactEmail` (enables the contact form) and `bookingUrl`
 - [ ] Impressum: address, managing director, register court and number, VAT ID (after register entry)
 - [ ] Privacy policy: legal review
+- [ ] `src/config.ts`: set `indexable: true` (removes the site-wide `noindex`)
 - [ ] Test in the WeChat in-app browser and on a mid-range Android phone
 
 ## Related knowledge
