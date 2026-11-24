@@ -5,7 +5,7 @@ const en = {
   meta: {
     title: 'Tervero: engineering, AI and EU compliance for companies entering Europe',
     description:
-      'A Berlin team for companies from China entering the EU: forward-deployed engineering, AI deployed into production systems, and compliance from advice to delivery.',
+      'For companies from China entering the EU: forward-deployed engineering, AI deployed into production systems, and compliance from advice to delivery.',
   },
   nav: {
     services: 'Services',
@@ -27,9 +27,9 @@ const en = {
   },
   home: {
     h1: 'Land in Europe. Stay compliant.',
-    lead: 'A Berlin team for companies from China entering the EU, with three services under one roof: compliance consulting and implementation, forward-deployed engineering in Europe, and AI deployed into production systems.',
+    lead: 'For companies from China entering the EU, three services under one roof: compliance consulting and implementation, forward-deployed engineering in Europe, and AI deployed into production systems.',
     facts: [
-      ['Berlin', 'German entity'],
+      ['On site', 'engineers in Europe'],
       ['3 service lines', 'compliance · engineering · AI'],
       ['3 languages', 'English · 中文 · Deutsch'],
     ],
@@ -82,7 +82,7 @@ const en = {
   },
   servicesPage: {
     title: 'Services',
-    lead: 'Compliance, engineering and AI from one team in Berlin. Scope and price are agreed in writing before work starts.',
+    lead: 'Compliance, engineering and AI from one team. Scope and price are agreed in writing before work starts.',
   },
   steps: [
     { t: 'Assess', d: '30-minute diagnosis call' },
@@ -140,7 +140,7 @@ const en = {
   },
   about: {
     title: 'About Tervero',
-    lead: 'Tervero (泰帆诺) is a Berlin company that helps companies from China launch and operate in the European market.',
+    lead: 'Tervero (泰帆诺) is a German company that helps companies from China launch and operate in the European market.',
     paras: [
       'We combine regulatory know-how with hands-on engineering. Instead of handing over a report, we stay until the registrations are done, the product data flows, and the tools are running.',
       'We work in Chinese, English and German, so your team in China and your partners and authorities in Europe hear the same story.',
