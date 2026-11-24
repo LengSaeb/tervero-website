@@ -4,7 +4,7 @@ const de: Dictionary = {
   meta: {
     title: 'Tervero: Engineering, KI und EU-Compliance für den Markteintritt in Europa',
     description:
-      'Ein Berliner Team für Unternehmen aus China: Forward-Deployed Engineering, KI in produktiven Systemen und EU-Compliance von der Beratung bis zur Umsetzung.',
+      'Für Unternehmen aus China: Forward-Deployed Engineering, KI in produktiven Systemen und EU-Compliance von der Beratung bis zur Umsetzung.',
   },
   nav: {
     services: 'Leistungen',
@@ -26,9 +26,9 @@ const de: Dictionary = {
   },
   home: {
     h1: 'In Europa ankommen. Dauerhaft konform.',
-    lead: 'Ein Berliner Team für Unternehmen aus China mit drei Leistungen aus einer Hand: Compliance-Beratung und Umsetzung, Forward-Deployed Engineering in Europa und KI in produktiven Systemen.',
+    lead: 'Für Unternehmen aus China, drei Leistungen aus einer Hand: Compliance-Beratung und Umsetzung, Forward-Deployed Engineering in Europa und KI in produktiven Systemen.',
     facts: [
-      ['Berlin', 'deutsche Gesellschaft'],
+      ['Vor Ort', 'Ingenieure in Europa'],
       ['3 Leistungen', 'Compliance · Engineering · KI'],
       ['3 Sprachen', 'Deutsch · English · 中文'],
     ],
@@ -81,7 +81,7 @@ const de: Dictionary = {
   },
   servicesPage: {
     title: 'Leistungen',
-    lead: 'Compliance, Engineering und KI aus einem Team in Berlin. Umfang und Preis werden vor Projektstart schriftlich vereinbart.',
+    lead: 'Compliance, Engineering und KI aus einem Team. Umfang und Preis werden vor Projektstart schriftlich vereinbart.',
   },
   steps: [
     { t: 'Analyse', d: '30-minütiges Erstgespräch' },
@@ -139,7 +139,7 @@ const de: Dictionary = {
   },
   about: {
     title: 'Über Tervero',
-    lead: 'Tervero (泰帆诺) ist ein Berliner Unternehmen, das Firmen aus China beim Markteintritt und Betrieb in Europa unterstützt.',
+    lead: 'Tervero (泰帆诺) ist ein deutsches Unternehmen, das Firmen aus China beim Markteintritt und Betrieb in Europa unterstützt.',
     paras: [
       'Wir verbinden regulatorisches Wissen mit praktischem Engineering. Statt nur einen Bericht zu übergeben, bleiben wir, bis die Registrierungen erledigt sind, die Produktdaten fließen und die Werkzeuge laufen.',
       'Wir arbeiten auf Chinesisch, Englisch und Deutsch, damit Ihr Team in China und Ihre Partner und Behörden in Europa dieselbe Geschichte hören.',
