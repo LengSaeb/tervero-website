@@ -44,9 +44,11 @@ src/
 
 ## Deploy on Vercel
 
+Live project: Vercel team **Novawerk**, project `tervero-website`. Every push to `main` deploys to production; other branches get preview URLs.
+
 1. In Vercel, "Add New Project" and import `LengSaeb/tervero-website`.
 2. Keep the detected "Astro" preset. Build command `npm run build`, output `dist`.
-3. Optional: set `SITE_URL` (e.g. `https://tervero.vercel.app`) so canonical and hreflang URLs use the final domain.
+3. Optional: set `SITE_URL` (e.g. `https://tervero-website.vercel.app`) so canonical and hreflang URLs use the final domain.
 
 ## Before going public
 
