@@ -1,6 +1,6 @@
 # Tervero Website (泰帆诺)
 
-Official website for **Tervero (泰帆诺)**: Europe FDE (forward-deployed engineering), AI transformation (small AI applications shipped fast), and EU compliance consulting and implementation for companies expanding into Europe.
+Official website for **Tervero (泰帆诺)**: Europe FDE (forward-deployed engineering), AI transformation (deploying AI capabilities and applications into production-grade systems), and EU compliance consulting and implementation for companies expanding into Europe.
 
 Legal entity: Tervero UG (haftungsbeschränkt), Berlin (in formation).
 

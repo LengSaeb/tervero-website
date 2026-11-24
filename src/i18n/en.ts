@@ -5,7 +5,7 @@ const en = {
   meta: {
     title: 'Tervero: engineering, AI and EU compliance for companies entering Europe',
     description:
-      'A Berlin team for companies from China entering the EU: forward-deployed engineering, fast AI applications, and compliance from advice to delivery.',
+      'A Berlin team for companies from China entering the EU: forward-deployed engineering, AI deployed into production systems, and compliance from advice to delivery.',
   },
   nav: {
     services: 'Services',
@@ -26,7 +26,7 @@ const en = {
   },
   home: {
     h1: 'Land in Europe. Stay compliant.',
-    lead: 'A Berlin team for companies from China entering the EU: forward-deployed engineering, fast AI applications, and compliance from advice to delivery, from CE, GPSR and EPR to the Digital Product Passport.',
+    lead: 'A Berlin team for companies from China entering the EU: forward-deployed engineering, AI deployed into production systems, and compliance from advice to delivery, from CE, GPSR and EPR to the Digital Product Passport.',
     facts: [
       ['Berlin', 'German entity'],
       ['3 languages', 'English · 中文 · Deutsch'],
@@ -68,8 +68,8 @@ const en = {
     },
     ai: {
       title: 'AI transformation',
-      short: 'Small, useful AI applications shipped fast, built to EU rules from day one.',
-      items: ['From idea to working tool in weeks', 'Document extraction, assistants, internal tools', 'Data hosted in the EU, privacy by design', 'AI Act risk check and team training'],
+      short: 'We deploy AI capabilities and applications into your production systems, built to run reliably and to EU rules.',
+      items: ['AI integrated into existing production systems', 'Assistants, document processing and automation in live workflows', 'Monitoring, evaluation and rollback for AI in production', 'EU data residency and AI Act compliance'],
     },
     ongoing: {
       title: 'Ongoing compliance',
@@ -141,7 +141,7 @@ const en = {
       ['Company', 'Tervero UG (haftungsbeschränkt)'],
       ['Based in', 'Berlin, Germany'],
       ['Working languages', 'Chinese, English, German'],
-      ['Focus', 'EU compliance, engineering, AI applications'],
+      ['Focus', 'EU compliance, engineering, production AI'],
     ],
   },
   contact: {

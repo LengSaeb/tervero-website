@@ -4,7 +4,7 @@ const de: Dictionary = {
   meta: {
     title: 'Tervero: Engineering, KI und EU-Compliance für den Markteintritt in Europa',
     description:
-      'Ein Berliner Team für Unternehmen aus China: Forward-Deployed Engineering, schnell umgesetzte KI-Anwendungen und EU-Compliance von der Beratung bis zur Umsetzung.',
+      'Ein Berliner Team für Unternehmen aus China: Forward-Deployed Engineering, KI in produktiven Systemen und EU-Compliance von der Beratung bis zur Umsetzung.',
   },
   nav: {
     services: 'Leistungen',
@@ -25,7 +25,7 @@ const de: Dictionary = {
   },
   home: {
     h1: 'In Europa ankommen. Dauerhaft konform.',
-    lead: 'Ein Berliner Team für Unternehmen aus China: Forward-Deployed Engineering, schnell umgesetzte KI-Anwendungen und Compliance von der Beratung bis zur Umsetzung, von CE, GPSR und EPR bis zum Digitalen Produktpass.',
+    lead: 'Ein Berliner Team für Unternehmen aus China: Forward-Deployed Engineering, KI in produktiven Systemen und Compliance von der Beratung bis zur Umsetzung, von CE, GPSR und EPR bis zum Digitalen Produktpass.',
     facts: [
       ['Berlin', 'deutsche Gesellschaft'],
       ['3 Sprachen', 'Deutsch · English · 中文'],
@@ -67,8 +67,8 @@ const de: Dictionary = {
     },
     ai: {
       title: 'KI-Transformation',
-      short: 'Kleine, nützliche KI-Anwendungen, schnell geliefert und von Anfang an EU-konform.',
-      items: ['In wenigen Wochen von der Idee zum Werkzeug', 'Dokumentenauswertung, Assistenten, interne Tools', 'Daten in der EU, Datenschutz von Anfang an', 'AI-Act-Risikoprüfung und Schulung'],
+      short: 'Wir bringen KI-Fähigkeiten und -Anwendungen in Ihre produktiven Systeme, zuverlässig im Betrieb und EU-konform.',
+      items: ['KI-Integration in bestehende Produktivsysteme', 'Assistenten, Dokumentenverarbeitung und Automatisierung im laufenden Betrieb', 'Monitoring, Evaluierung und Rollback für KI in Produktion', 'Datenhaltung in der EU und AI-Act-Compliance'],
     },
     ongoing: {
       title: 'Laufende Compliance',
@@ -140,7 +140,7 @@ const de: Dictionary = {
       ['Unternehmen', 'Tervero UG (haftungsbeschränkt)'],
       ['Sitz', 'Berlin, Deutschland'],
       ['Arbeitssprachen', 'Chinesisch, Englisch, Deutsch'],
-      ['Schwerpunkt', 'EU-Compliance, Engineering, KI-Anwendungen'],
+      ['Schwerpunkt', 'EU-Compliance, Engineering, produktive KI'],
     ],
   },
   contact: {
