@@ -1,0 +1,41 @@
+---
+// Root: send visitors to their language. English is the default; Chinese and
+// German browsers go to /zh/ and /de/. Works without JavaScript via the links.
+import '../styles/global.css';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tervero</title>
+    <link rel="canonical" href={new URL('/en/', Astro.site)} />
+    <link rel="alternate" hreflang="en" href={new URL('/en/', Astro.site)} />
+    <link rel="alternate" hreflang="zh-CN" href={new URL('/zh/', Astro.site)} />
+    <link rel="alternate" hreflang="de" href={new URL('/de/', Astro.site)} />
+    <link rel="alternate" hreflang="x-default" href={new URL('/en/', Astro.site)} />
+    <script is:inline>
+      (function () {
+        var pick = 'en';
+        try {
+          var saved = localStorage.getItem('lang');
+          var langs = saved ? [saved] : navigator.languages || [navigator.language || 'en'];
+          for (var i = 0; i < langs.length; i++) {
+            var l = String(langs[i]).toLowerCase();
+            if (l.indexOf('zh') === 0) { pick = 'zh'; break; }
+            if (l.indexOf('de') === 0) { pick = 'de'; break; }
+            if (l.indexOf('en') === 0) { pick = 'en'; break; }
+          }
+        } catch (e) {}
+        location.replace('/' + pick + '/');
+      })();
+    </script>
+    <noscript><meta http-equiv="refresh" content="0; url=/en/" /></noscript>
+  </head>
+  <body>
+    <main class="band">
+      <p><a href="/en/">English</a> · <a href="/zh/" lang="zh-CN">中文</a> · <a href="/de/" lang="de">Deutsch</a></p>
+    </main>
+  </body>
+</html>

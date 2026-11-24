@@ -1,0 +1,35 @@
+---
+// Legal notice (Impressum, § 5 DDG). The German text is binding for all locales.
+// TODO after commercial register entry: address, managing director, register number, VAT ID.
+import Base from '../../layouts/Base.astro';
+import { t, localePaths, type Locale } from '../../i18n';
+import { site } from '../../config';
+
+export const getStaticPaths = localePaths;
+const locale = Astro.params.lang as Locale;
+const d = t(locale);
+const pending = 'wird nach Eintragung ergänzt';
+---
+
+<Base locale={locale} title={d.legal.impressum}>
+  <section class="band">
+    <div class="wrap prose" lang="de">
+      <h1>Impressum</h1>
+      <p class="notice" lang={locale === 'zh' ? 'zh-CN' : locale}>{d.legal.draft} {locale !== 'de' && d.legal.germanBinding}</p>
+      <h2>Angaben gemäß § 5 DDG</h2>
+      <p>{site.legalName}<br />Anschrift: {pending}<br />{site.city}, Deutschland</p>
+      <h3>Vertreten durch</h3>
+      <p>Geschäftsführung: {pending}</p>
+      <h3>Registereintrag</h3>
+      <p>Registergericht: {pending}<br />Registernummer: {pending}</p>
+      <h3>Umsatzsteuer-ID</h3>
+      <p>{pending}</p>
+      <h3>Kontakt</h3>
+      <p>E-Mail: {site.contactEmail || pending}</p>
+      <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+      <p>{pending}</p>
+      <h2>Verbraucherstreitbeilegung</h2>
+      <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+    </div>
+  </section>
+</Base>

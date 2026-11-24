@@ -1,0 +1,72 @@
+---
+// German EPR self-check. Pure client-side logic, no data leaves the browser.
+// Question order: 0 sells in DE, 1 packaging, 2 electrical, 3 batteries, 4 no DE establishment.
+import { t, type Locale } from '../i18n';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const d = t(locale);
+const defaults = [true, true, true, false, true];
+---
+
+<div class="epr" data-results={JSON.stringify(d.check.results)}>
+  <div class="qs" role="group">
+    {d.check.questions.map((q, i) => (
+      <button type="button" class="tg" role="switch" aria-checked={defaults[i] ? "true" : "false"} data-i={i}>
+        <span>{q}</span><i aria-hidden="true"></i>
+      </button>
+    ))}
+  </div>
+  <div class="res" aria-live="polite">
+    <p class="rh">{d.check.resultTitle}</p>
+    <ul class="out"></ul>
+    <p class="none" hidden>{d.check.results.none}</p>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll<HTMLElement>('.epr').forEach((root) => {
+    const r = JSON.parse(root.dataset.results ?? '{}') as Record<string, string>;
+    const toggles = [...root.querySelectorAll<HTMLButtonElement>('.tg')];
+    const out = root.querySelector('.out')!;
+    const none = root.querySelector<HTMLElement>('.none')!;
+    const rh = root.querySelector<HTMLElement>('.rh')!;
+    const render = () => {
+      const [de, pack, elec, batt, foreign] = toggles.map((b) => b.getAttribute('aria-checked') === 'true');
+      const items: string[] = [];
+      if (de) {
+        if (pack) items.push(r.packaging);
+        if (elec) items.push(r.weee);
+        if (batt) items.push(r.battery);
+        if (foreign && (elec || batt)) items.push(r.ar);
+      }
+      out.replaceChildren(...items.map((text) => Object.assign(document.createElement('li'), { textContent: text })));
+      none.hidden = items.length > 0;
+      rh.hidden = items.length === 0;
+    };
+    toggles.forEach((b) =>
+      b.addEventListener('click', () => {
+        b.setAttribute('aria-checked', String(b.getAttribute('aria-checked') !== 'true'));
+        render();
+      }),
+    );
+    render();
+  });
+</script>
+
+<style>
+  .epr { display: grid; gap: 16px; grid-template-columns: minmax(0, 1fr); }
+  .qs { display: grid; gap: 8px; }
+  .tg { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 8px 14px; border: 1.5px solid var(--line); border-radius: var(--radius); background: #fff; color: var(--ink); font: inherit; font-size: 16px; text-align: left; cursor: pointer; }
+  .tg[aria-checked='true'] { border-color: var(--ink); }
+  .tg i { flex: none; position: relative; width: 44px; height: 26px; border-radius: 99px; background: #c9c9c2; transition: background 0.2s; }
+  .tg i::after { content: ''; position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; border-radius: 50%; background: #fff; transition: transform 0.2s; }
+  .tg[aria-checked='true'] i { background: var(--ink); }
+  .tg[aria-checked='true'] i::after { transform: translateX(18px); background: var(--signal); }
+  .res { background: var(--paper); border: 2px solid var(--ink); border-radius: var(--radius); padding: 18px; align-self: start; }
+  .rh { font-weight: 800; margin: 0 0 8px; }
+  .out { margin: 0; padding-left: 20px; }
+  .out li { margin-bottom: 8px; }
+  .none { margin: 0; font-weight: 700; }
+  @media (min-width: 900px) { .epr { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } .res { position: sticky; top: 90px; } }
+  @media (prefers-reduced-motion: reduce) { .tg i, .tg i::after { transition: none; } }
+</style>

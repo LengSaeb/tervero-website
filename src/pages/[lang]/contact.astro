@@ -1,0 +1,58 @@
+---
+import Base from '../../layouts/Base.astro';
+import { t, href, localePaths, type Locale } from '../../i18n';
+import { site } from '../../config';
+
+export const getStaticPaths = localePaths;
+const locale = Astro.params.lang as Locale;
+const d = t(locale);
+const c = d.contact;
+const live = site.contactEmail !== '';
+---
+
+<Base locale={locale} title={c.title} description={c.lead}>
+  <section class="band">
+    <div class="wrap split">
+      <div>
+        <h1>{c.title}</h1>
+        <p class="lead">{c.lead}</p>
+        {site.bookingUrl && (
+          <div class="card" style="margin-top:24px">
+            <h3>{c.bookTitle}</h3>
+            <p>{c.bookText}</p>
+            <a class="btn primary" href={site.bookingUrl}>{d.cta.book}</a>
+          </div>
+        )}
+      </div>
+      <div>
+        {!live && <p class="notice">{c.pending}</p>}
+        <form id="contact-form" data-email={site.contactEmail} aria-disabled={live ? undefined : 'true'}>
+          <fieldset disabled={!live} style="border:0;padding:0;margin:0">
+            <div class="field"><label for="f-name">{c.name}</label><input id="f-name" name="name" autocomplete="name" required /></div>
+            <div class="field"><label for="f-company">{c.company}</label><input id="f-company" name="company" autocomplete="organization" /></div>
+            <div class="field"><label for="f-email">{c.email}</label><input id="f-email" name="email" type="email" autocomplete="email" required /></div>
+            <div class="field"><label for="f-product">{c.product}</label><input id="f-product" name="product" /></div>
+            <div class="field"><label for="f-markets">{c.markets}</label><input id="f-markets" name="markets" placeholder="DE, FR, NL" /></div>
+            <div class="field"><label for="f-message">{c.message}</label><textarea id="f-message" name="message" rows="5"></textarea></div>
+            <button class="btn primary" type="submit">{c.send}</button>
+          </fieldset>
+          <p class="small" style="margin-top:12px"><a href={href(locale, 'privacy')}>{c.privacy}</a></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<script>
+  // Until a form backend exists, submitting opens the visitor's mail app with the
+  // details pre-filled. Nothing is sent to a server from this page.
+  const form = document.querySelector<HTMLFormElement>('#contact-form');
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const to = form.dataset.email;
+    if (!to) return;
+    const data = new FormData(form);
+    const body = [...data.entries()].map(([k, v]) => `${k}: ${v}`).join('\n');
+    window.location.href = `mailto:${to}?subject=${encodeURIComponent('Website enquiry')}&body=${encodeURIComponent(body)}`;
+  });
+</script>
