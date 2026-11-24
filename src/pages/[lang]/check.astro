@@ -1,0 +1,27 @@
+---
+import Base from '../../layouts/Base.astro';
+import EprCheck from '../../components/EprCheck.astro';
+import { t, href, localePaths, type Locale } from '../../i18n';
+
+export const getStaticPaths = localePaths;
+const locale = Astro.params.lang as Locale;
+const d = t(locale);
+---
+
+<Base locale={locale} title={d.check.title} description={d.check.lead}>
+  <section class="band">
+    <div class="wrap">
+      <h1>{d.check.title}</h1>
+      <p class="lead">{d.check.lead}</p>
+      <div style="margin-top:24px"><EprCheck locale={locale} /></div>
+      <p class="small" style="margin-top:16px">{d.check.disclaimer}</p>
+    </div>
+  </section>
+  <section class="band paper">
+    <div class="wrap">
+      <h2>{d.check.moreTitle}</h2>
+      <p>{d.check.moreText}</p>
+      <div class="ctas"><a class="btn primary" href={href(locale, 'contact')}>{d.cta.book}</a></div>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,89 @@
+---
+import Base from '../../layouts/Base.astro';
+import Route from '../../components/Route.astro';
+import ServiceCards from '../../components/ServiceCards.astro';
+import { t, href, localePaths, type Locale } from '../../i18n';
+
+export const getStaticPaths = localePaths;
+const locale = Astro.params.lang as Locale;
+const d = t(locale);
+const here = 2;
+---
+
+<Base locale={locale}>
+  <section class="hero band">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>{d.home.h1}</h1>
+        <p class="lead">{d.home.lead}</p>
+        <div class="ctas">
+          <a class="btn primary" href={href(locale, 'contact')}>{d.cta.book}</a>
+          <a class="btn signal" href={href(locale, 'check')}>{d.cta.check}</a>
+        </div>
+      </div>
+      <dl class="stats">
+        {d.home.facts.map(([k, v]) => <div><dt>{k}</dt><dd>{v}</dd></div>)}
+      </dl>
+    </div>
+  </section>
+
+  <Route locale={locale} here={here} />
+
+  <section class="band">
+    <div class="wrap">
+      <h2>{d.home.servicesTitle}</h2>
+      <p class="muted">{d.home.servicesLead}</p>
+      <ServiceCards locale={locale} highlight={d.home.stations[here].service} />
+      <p style="margin-top:18px"><a href={href(locale, 'services')}>{d.cta.services} →</a></p>
+    </div>
+  </section>
+
+  <section class="band concrete">
+    <div class="wrap">
+      <h2>{d.home.scenariosTitle}</h2>
+      <div class="grid three">
+        {d.home.scenarios.map((s) => <article class="card"><h3>{s.t}</h3><p>{s.d}</p></article>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap split">
+      <div>
+        <h2>{d.home.stepsTitle}</h2>
+        <ol class="steps">
+          {d.steps.map((s) => <li><b>{s.t}</b><span>{s.d}</span></li>)}
+        </ol>
+      </div>
+      <div>
+        <h2>{d.home.timelineTitle}</h2>
+        <ol class="timeline">
+          {d.timeline.map((r) => <li><time datetime={r.date}>{r.date}</time><span>{r.text}</span></li>)}
+        </ol>
+        <p class="small" style="margin-top:10px">{d.home.timelineNote}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band cta-band">
+    <div class="wrap">
+      <h2>{d.home.ctaTitle}</h2>
+      <p class="lead">{d.home.ctaText}</p>
+      <div class="ctas">
+        <a class="btn primary" href={href(locale, 'contact')}>{d.cta.book}</a>
+        <a class="btn" href={href(locale, 'check')}>{d.cta.check}</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hero { padding-top: clamp(36px, 8vw, 88px); }
+  .hero-grid { display: grid; gap: 28px; grid-template-columns: minmax(0, 1fr); align-items: end; }
+  .stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; margin: 0; background: #e2e2dc; border: 1px solid #e2e2dc; border-radius: var(--radius); overflow: hidden; }
+  .stats div { background: #fff; padding: 14px 12px; }
+  .stats dt { font-size: clamp(16px, 4.4vw, 22px); font-weight: 800; letter-spacing: -0.02em; }
+  .stats dd { margin: 2px 0 0; font-size: 13px; color: var(--mute); line-height: 1.35; }
+  .cta-band { border-top: 6px solid var(--signal); background: var(--paper); }
+  @media (min-width: 900px) { .hero-grid { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 48px; } }
+</style>

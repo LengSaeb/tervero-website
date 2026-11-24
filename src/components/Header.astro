@@ -1,0 +1,87 @@
+---
+import { t, href, switchLocale, locales, type Locale } from '../i18n';
+import { localeLabel, localeName, site } from '../config';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const d = t(locale);
+const path = Astro.url.pathname;
+const links = [
+  ['services', d.nav.services],
+  ['check', d.nav.check],
+  ['insights', d.nav.insights],
+  ['about', d.nav.about],
+  ['contact', d.nav.contact],
+] as const;
+const isCurrent = (page: string) => path.startsWith(href(locale, page));
+---
+
+<header class="hdr">
+  <div class="bar">
+    <a class="logo" href={href(locale)} aria-label="Tervero home">
+      <b aria-hidden="true">T</b>{site.brand} <span>{site.brandZh}</span>
+    </a>
+    <nav class="links" id="site-nav" aria-label="Main">
+      {links.map(([page, label]) => (
+        <a href={href(locale, page)} aria-current={isCurrent(page) ? 'page' : undefined}>{label}</a>
+      ))}
+    </nav>
+    <div class="lang" role="group" aria-label={d.nav.language}>
+      {locales.map((l) => (
+        <a href={switchLocale(path, l)} hreflang={l} lang={l} title={localeName[l]} aria-current={l === locale ? 'true' : undefined}>{localeLabel[l]}</a>
+      ))}
+    </div>
+    <button class="burger" type="button" aria-controls="site-nav" aria-expanded="false" aria-label={d.nav.menu} data-close={d.nav.close} data-open={d.nav.menu}>
+      <i></i>
+    </button>
+  </div>
+</header>
+
+<script>
+  const btn = document.querySelector<HTMLButtonElement>('.burger');
+  const hdr = document.querySelector('.hdr');
+  btn?.addEventListener('click', () => {
+    const open = btn.getAttribute('aria-expanded') !== 'true';
+    btn.setAttribute('aria-expanded', String(open));
+    btn.setAttribute('aria-label', (open ? btn.dataset.close : btn.dataset.open) ?? '');
+    hdr?.classList.toggle('open', open);
+  });
+  // Remember an explicit language choice so the root page does not redirect again.
+  document.querySelectorAll<HTMLAnchorElement>('.lang a').forEach((a) =>
+    a.addEventListener('click', () => {
+      try { localStorage.setItem('lang', a.hreflang); } catch { /* storage unavailable */ }
+    }),
+  );
+</script>
+
+<style>
+  .hdr { position: sticky; top: 0; z-index: 10; background: rgba(255, 255, 255, 0.96); border-bottom: 1px solid #ececE8; backdrop-filter: blur(8px); }
+  .bar { max-width: var(--max); margin: 0 auto; display: flex; align-items: center; gap: 10px; padding: 10px var(--gutter); min-height: 64px; flex-wrap: wrap; }
+  .logo { font-weight: 800; font-size: 18px; display: flex; align-items: center; gap: 8px; color: var(--ink); text-decoration: none; white-space: nowrap; }
+  .logo b { width: 22px; height: 22px; background: var(--ink); color: var(--signal); display: inline-grid; place-items: center; font-size: 13px; border-radius: 3px; }
+  .logo span { font-weight: 500; color: var(--mute); font-size: 15px; }
+  .links { display: none; order: 5; width: 100%; flex-direction: column; padding: 8px 0 12px; }
+  .links a { color: var(--ink); text-decoration: none; font-size: 18px; font-weight: 700; padding: 12px 0; border-bottom: 1px solid var(--line); }
+  .links a[aria-current='page'] { box-shadow: inset 4px 0 0 var(--signal); padding-left: 12px; }
+  .open .links { display: flex; }
+  .lang { display: flex; margin-left: auto; border: 1px solid var(--ink); border-radius: 6px; overflow: hidden; }
+  .lang a { display: inline-grid; place-items: center; min-width: 38px; min-height: 36px; padding: 0 8px; font-size: 13px; font-weight: 700; color: var(--ink); text-decoration: none; }
+  .lang a[aria-current='true'] { background: var(--ink); color: #fff; }
+  .burger { width: 44px; height: 44px; border: 0; background: transparent; display: inline-grid; place-items: center; cursor: pointer; }
+  .burger i, .burger i::before, .burger i::after { display: block; width: 22px; height: 2px; background: var(--ink); position: relative; transition: transform 0.2s; }
+  .burger i::before, .burger i::after { content: ''; position: absolute; left: 0; }
+  .burger i::before { top: -7px; }
+  .burger i::after { top: 7px; }
+  .open .burger i { background: transparent; }
+  .open .burger i::before { transform: translateY(7px) rotate(45deg); }
+  .open .burger i::after { transform: translateY(-7px) rotate(-45deg); }
+  @media (min-width: 900px) {
+    .bar { flex-wrap: nowrap; gap: 24px; }
+    .links { display: flex; order: 0; width: auto; flex-direction: row; gap: 22px; margin-left: auto; padding: 0; }
+    .links a { font-size: 15px; font-weight: 500; padding: 4px 0; border: 0; }
+    .links a[aria-current='page'] { box-shadow: inset 0 -3px 0 var(--signal); padding-left: 0; }
+    .lang { margin-left: 0; }
+    .burger { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) { .burger i, .burger i::before, .burger i::after { transition: none; } }
+</style>

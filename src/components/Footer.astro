@@ -1,0 +1,41 @@
+---
+import { t, href, type Locale } from '../i18n';
+import { site } from '../config';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const d = t(locale);
+const year = new Date().getFullYear();
+---
+
+<footer class="ftr">
+  <div class="wrap cols">
+    <div>
+      <p class="name">{site.brand} <span>{site.brandZh}</span></p>
+      <p class="small">{d.footer.tagline}</p>
+    </div>
+    <nav aria-label="Footer">
+      <a href={href(locale, 'services')}>{d.nav.services}</a>
+      <a href={href(locale, 'check')}>{d.nav.check}</a>
+      <a href={href(locale, 'insights')}>{d.nav.insights}</a>
+      <a href={href(locale, 'about')}>{d.nav.about}</a>
+      <a href={href(locale, 'contact')}>{d.nav.contact}</a>
+    </nav>
+    <nav aria-label="Legal">
+      <a href={href(locale, 'impressum')}>{d.legal.impressum}</a>
+      <a href={href(locale, 'privacy')}>{d.legal.privacy}</a>
+    </nav>
+  </div>
+  <p class="wrap small copy">© {year} {site.legalName}, {site.city}</p>
+</footer>
+
+<style>
+  .ftr { border-top: 1px solid var(--line); padding: 36px var(--gutter) 24px; }
+  .cols { display: grid; gap: 20px; grid-template-columns: minmax(0, 1fr); }
+  .name { font-weight: 800; font-size: 18px; margin: 0 0 4px; }
+  .name span { font-weight: 500; color: var(--mute); }
+  nav { display: flex; flex-direction: column; gap: 2px; }
+  nav a { color: var(--ink); text-decoration: none; padding: 6px 0; }
+  nav a:hover { text-decoration: underline; }
+  .copy { margin-top: 20px; }
+  @media (min-width: 720px) { .cols { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr); } }
+</style>

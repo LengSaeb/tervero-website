@@ -1,0 +1,56 @@
+---
+import '@fontsource/hanken-grotesk/400.css';
+import '@fontsource/hanken-grotesk/700.css';
+import '@fontsource/hanken-grotesk/800.css';
+import '@fontsource/noto-sans-sc/400.css';
+import '@fontsource/noto-sans-sc/700.css';
+import '@fontsource/noto-sans-sc/900.css';
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Dock from '../components/Dock.astro';
+import { t, switchLocale, locales, defaultLocale, type Locale } from '../i18n';
+import { htmlLang, site } from '../config';
+
+interface Props {
+  locale: Locale;
+  title?: string;
+  description?: string;
+}
+
+const { locale, title, description } = Astro.props;
+const d = t(locale);
+const pageTitle = title ? `${title} · Tervero` : d.meta.title;
+const pageDescription = description ?? d.meta.description;
+const path = Astro.url.pathname;
+const canonical = new URL(path, Astro.site);
+---
+
+<!doctype html>
+<html lang={htmlLang[locale]}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    {!site.indexable && <meta name="robots" content="noindex, nofollow" />}
+    <link rel="canonical" href={canonical} />
+    {locales.map((l) => <link rel="alternate" hreflang={htmlLang[l]} href={new URL(switchLocale(path, l), Astro.site)} />)}
+    <link rel="alternate" hreflang="x-default" href={new URL(switchLocale(path, defaultLocale), Astro.site)} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:url" content={canonical} />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <a class="skip" href="#main">{d.nav.skip}</a>
+    <Header locale={locale} />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer locale={locale} />
+    <Dock locale={locale} />
+  </body>
+</html>
