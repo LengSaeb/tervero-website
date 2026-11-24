@@ -1,6 +1,6 @@
-# Taifannuo (泰帆诺) Website
+# Tervero Website (泰帆诺)
 
-Official website for **Taifannuo (泰帆诺)** — Europe FDE (Forward Deployed Engineering) plus overseas compliance consulting and implementation services for companies expanding into Europe.
+Official website for **Tervero (泰帆诺)** — Europe FDE (Forward Deployed Engineering) plus overseas compliance consulting and implementation services for companies expanding into Europe.
 
 Legal entity: Tervero UG (haftungsbeschränkt), Berlin (in formation).
 
