@@ -42,7 +42,7 @@ const path = Astro.url.pathname;
 <style>
   .ftr { background: var(--night); color: var(--on-night); padding: clamp(80px, 12vw, 140px) var(--gutter) 0; overflow: hidden; position: relative; }
   .top { display: grid; gap: 56px; grid-template-columns: minmax(0, 1fr); }
-  .tag { font: 300 clamp(30px, 4vw, 48px)/1.12 var(--serif); max-width: 14em; margin: 0; text-wrap: balance; }
+  .tag { font: var(--dw) clamp(30px, 4vw, 48px)/1.12 var(--serif); max-width: 14em; margin: 0; text-wrap: balance; }
   .cols { display: grid; gap: 36px; grid-template-columns: repeat(auto-fit, minmax(11em, 1fr)); }
   .cap { color: #8d989c; }
   nav { display: flex; flex-direction: column; gap: 4px; }

@@ -79,7 +79,7 @@ const links = [
   .overlay { position: fixed; inset: 0; z-index: 25; background: var(--night); color: var(--on-night); display: flex; flex-direction: column; justify-content: center; padding: 96px var(--gutter) 40px; opacity: 0; transition: opacity 0.4s var(--ease); }
   .overlay.show { opacity: 1; }
   .overlay nav { display: flex; flex-direction: column; gap: clamp(8px, 2vh, 20px); margin-left: clamp(0px, 32vw, 520px); }
-  .overlay nav a { font: 300 clamp(40px, 7vw, 72px)/1.1 var(--serif); text-decoration: none; color: var(--on-night); opacity: 0; transform: translateY(18px); transition: opacity 0.6s var(--ease), transform 0.6s var(--ease), color 0.2s; transition-delay: calc(var(--i) * 60ms + 80ms); }
+  .overlay nav a { font: var(--dw) clamp(40px, 7vw, 72px)/1.1 var(--serif); text-decoration: none; color: var(--on-night); opacity: 0; transform: translateY(18px); transition: opacity 0.6s var(--ease), transform 0.6s var(--ease), color 0.2s; transition-delay: calc(var(--i) * 60ms + 80ms); }
   .overlay.show nav a { opacity: 1; transform: none; }
   .overlay nav a:hover, .overlay nav a[aria-current='page'] { color: var(--signal); }
   .ov-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 24px; margin: clamp(32px, 6vh, 64px) 0 0 clamp(0px, 32vw, 520px); }
