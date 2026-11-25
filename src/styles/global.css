@@ -17,8 +17,9 @@
   --radius: 4px;
   --max: 1240px;
   --gutter: max(5vw, 20px);
-  --sans: 'Hanken Grotesk', 'Noto Sans SC', system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif;
-  --serif: 'Newsreader', 'Noto Serif SC', 'Songti SC', 'STSong', Georgia, serif;
+  --sans: 'Inter Variable', 'Noto Sans SC', system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --serif: 'Source Serif 4 Variable', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', Georgia, serif;
+  --dw: 400;
   --ease: cubic-bezier(0.2, 0.7, 0.1, 1);
 }
 
@@ -27,9 +28,12 @@ html { scroll-padding-top: 80px; -webkit-text-size-adjust: 100%; }
 body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 var(--sans); overflow-x: clip; -webkit-font-smoothing: antialiased; }
 :lang(zh-CN) body, html:lang(zh-CN) { line-height: 1.75; }
 :lang(de) { hyphens: auto; }
+/* Chinese headings: Source Han Sans (Noto Sans SC) medium reads cleaner than a light Song face */
+:lang(zh) { --dw: 500; }
+:lang(zh) h1, :lang(zh) h2, :lang(zh) h3 { letter-spacing: 0.01em; }
 img { max-width: 100%; height: auto; }
 a { color: inherit; }
-h1, h2, h3 { font-family: var(--serif); font-weight: 300; letter-spacing: -0.01em; line-height: 1.12; margin: 0; text-wrap: balance; }
+h1, h2, h3 { font-family: var(--serif); font-weight: var(--dw); letter-spacing: -0.015em; line-height: 1.12; margin: 0; text-wrap: balance; }
 h1 { font-size: clamp(38px, 7vw, 76px); line-height: 1.06; }
 h2 { font-size: clamp(30px, 4.4vw, 52px); margin-bottom: 18px; }
 h3 { font-size: clamp(22px, 2.2vw, 28px); margin-bottom: 8px; }
@@ -42,7 +46,7 @@ p { margin: 0 0 14px; max-width: 62ch; }
 .lead { font-size: clamp(17px, 1.6vw, 20px); color: #33403f; max-width: 58ch; margin-top: 18px; }
 .muted { color: var(--mute); }
 .small { font-size: 14px; color: var(--mute); }
-.cap { display: block; font: 500 13px/1.4 var(--sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--mute); margin-bottom: 18px; }
+.cap { display: block; hyphens: manual; font: 500 13px/1.4 var(--sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--mute); margin-bottom: 18px; }
 .skip { position: absolute; left: -9999px; }
 .skip:focus { left: 16px; top: 16px; background: var(--ink); color: #fff; padding: 8px 12px; z-index: 50; }
 
@@ -69,7 +73,7 @@ p { margin: 0 0 14px; max-width: 62ch; }
 .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 28px; grid-template-columns: minmax(0, 1fr); counter-reset: s; }
 .steps li { border-top: 1px solid var(--ink); padding-top: 18px; counter-increment: s; }
 .steps li::before { content: counter(s, decimal-leading-zero); display: block; font: 500 13px/1 var(--sans); letter-spacing: 0.08em; color: var(--mute); margin-bottom: 18px; }
-.steps b { display: block; font: 300 26px/1.2 var(--serif); margin-bottom: 6px; }
+.steps b { display: block; font: var(--dw) 26px/1.2 var(--serif); margin-bottom: 6px; }
 .steps span { font-size: 15px; color: var(--mute); }
 
 /* definition list */
