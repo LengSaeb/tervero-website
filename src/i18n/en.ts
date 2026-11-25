@@ -27,9 +27,9 @@ const en = {
   },
   home: {
     h1: 'Land in Europe. Stay compliant.',
-    lead: 'For companies from China entering the EU, three services under one roof: compliance consulting and implementation, forward-deployed engineering in Europe, and AI deployed into production systems.',
+    lead: 'For companies from China entering the EU, three services under one roof: compliance consulting and implementation, forward-deployed engineering (FDE), and AI deployed into production systems.',
     facts: [
-      ['On site', 'engineers in Europe'],
+      ['FDE model', 'our engineers, your delivery'],
       ['3 service lines', 'compliance · engineering · AI'],
       ['3 languages', 'English · 中文 · Deutsch'],
     ],
@@ -37,7 +37,7 @@ const en = {
     stations: [
       { name: 'Assess', note: 'market, rules and risks', service: 'compliance' },
       { name: 'Comply', note: 'CE, GPSR, EPR, DPP, GDPR', service: 'compliance' },
-      { name: 'Build', note: 'engineers on site in Europe', service: 'fde' },
+      { name: 'Build', note: 'engineers embedded in your team', service: 'fde' },
       { name: 'Integrate AI', note: 'into production systems', service: 'ai' },
       { name: 'Operate', note: 'customers, partners, support', service: 'fde' },
       { name: 'Stay compliant', note: 'monitoring and updates', service: 'compliance' },
@@ -47,12 +47,10 @@ const en = {
     scenariosTitle: 'Where are you today?',
     scenarios: [
       { t: 'Entering the EU', d: 'We map which rules apply to your product, close the gaps and get the registrations and files done.' },
-      { t: 'Need engineers on the ground', d: 'Our engineers work on site in Europe with your customers and partners, and build what the market requires into your systems.' },
+      { t: 'Need people to get it built', d: 'We embed forward-deployed engineers in your team. They work with your EU customers and partners and build what the market requires into your systems.' },
       { t: 'Bringing AI into production', d: 'We take AI from pilot to production: integrated, monitored and compliant with EU rules.' },
     ],
     stepsTitle: 'How we work',
-    toolsTitle: 'Tools',
-    toolsLead: 'Free tools that give a first answer in minutes. The EPR self-check for Germany is the first; more are on the way.',
     timelineTitle: 'Key EU dates',
     timelineNote: 'Simplified. Always check the Official Journal of the EU for the binding dates.',
     ctaTitle: 'Talk to us before you ship',
@@ -65,8 +63,8 @@ const en = {
       items: ['CE, GPSR, EPR registrations', 'Technical files and labelling', 'EU responsible person and authorised representative', 'Digital Product Passport readiness'],
     },
     fde: {
-      title: 'Forward-deployed engineering',
-      short: 'Engineers on site in Europe who build compliance into your product and systems.',
+      title: 'Forward-deployed engineering (FDE)',
+      short: 'We embed our engineers in your team and own the delivery, until it runs in your product and systems.',
       items: ['Product data and DPP integration', 'GDPR-ready data flows and EU hosting', 'Security updates and SBOM for the Cyber Resilience Act', 'Working directly with your EU customers and partners'],
     },
     ai: {
@@ -87,7 +85,7 @@ const en = {
   steps: [
     { t: 'Assess', d: '30-minute diagnosis call' },
     { t: 'Scope', d: 'Fixed price, agreed in writing' },
-    { t: 'Deliver', d: 'Engineers and advisors on the ground' },
+    { t: 'Deliver', d: 'Engineers and advisors who deliver hands-on' },
     { t: 'Stay compliant', d: 'Monitoring and annual review' },
   ],
   timeline: [

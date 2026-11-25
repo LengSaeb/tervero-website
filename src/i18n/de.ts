@@ -26,9 +26,9 @@ const de: Dictionary = {
   },
   home: {
     h1: 'In Europa ankommen. Dauerhaft konform.',
-    lead: 'Für Unternehmen aus China, drei Leistungen aus einer Hand: Compliance-Beratung und Umsetzung, Forward-Deployed Engineering in Europa und KI in produktiven Systemen.',
+    lead: 'Für Unternehmen aus China, drei Leistungen aus einer Hand: Compliance-Beratung und Umsetzung, Forward-Deployed Engineering (FDE) und KI in produktiven Systemen.',
     facts: [
-      ['Vor Ort', 'Ingenieure in Europa'],
+      ['FDE-Modell', 'unsere Ingenieure, Ihre Umsetzung'],
       ['3 Leistungen', 'Compliance · Engineering · KI'],
       ['3 Sprachen', 'Deutsch · English · 中文'],
     ],
@@ -36,7 +36,7 @@ const de: Dictionary = {
     stations: [
       { name: 'Analyse', note: 'Markt, Regeln, Risiken', service: 'compliance' },
       { name: 'Compliance', note: 'CE, GPSR, EPR, DPP, DSGVO', service: 'compliance' },
-      { name: 'Engineering', note: 'Ingenieure vor Ort in Europa', service: 'fde' },
+      { name: 'Engineering', note: 'Ingenieure in Ihrem Team', service: 'fde' },
       { name: 'KI integrieren', note: 'in produktive Systeme', service: 'ai' },
       { name: 'Betrieb', note: 'Kunden, Partner, Support', service: 'fde' },
       { name: 'Laufend konform', note: 'Monitoring und Updates', service: 'compliance' },
@@ -46,12 +46,10 @@ const de: Dictionary = {
     scenariosTitle: 'Wo stehen Sie heute?',
     scenarios: [
       { t: 'Markteintritt in die EU', d: 'Wir klären, welche Regeln für Ihr Produkt gelten, schließen Lücken und erledigen Registrierungen und Unterlagen.' },
-      { t: 'Ingenieure vor Ort gesucht', d: 'Unsere Ingenieure arbeiten in Europa direkt mit Ihren Kunden und Partnern und bauen die Marktanforderungen in Ihre Systeme ein.' },
+      { t: 'Umsetzungskräfte gesucht', d: 'Wir setzen Forward-Deployed Engineers in Ihrem Team ein. Sie arbeiten mit Ihren Kunden und Partnern in Europa und bauen die Marktanforderungen in Ihre Systeme ein.' },
       { t: 'KI in die Produktion bringen', d: 'Wir bringen KI vom Pilotprojekt in den Betrieb: integriert, überwacht und EU-konform.' },
     ],
     stepsTitle: 'So arbeiten wir',
-    toolsTitle: 'Tools',
-    toolsLead: 'Kostenlose Tools für eine erste Antwort in Minuten. Der EPR-Selbstcheck für Deutschland ist das erste, weitere folgen.',
     timelineTitle: 'Wichtige EU-Termine',
     timelineNote: 'Vereinfacht. Verbindlich sind die Daten im Amtsblatt der EU.',
     ctaTitle: 'Sprechen Sie mit uns, bevor Sie liefern',
@@ -64,8 +62,8 @@ const de: Dictionary = {
       items: ['CE-, GPSR- und EPR-Registrierungen', 'Technische Unterlagen und Kennzeichnung', 'EU-Verantwortlicher und Bevollmächtigter', 'Vorbereitung auf den Digitalen Produktpass'],
     },
     fde: {
-      title: 'Forward-Deployed Engineering',
-      short: 'Ingenieure vor Ort in Europa, die Compliance direkt in Produkt und Systeme einbauen.',
+      title: 'Forward-Deployed Engineering (FDE)',
+      short: 'Wir setzen unsere Ingenieure in Ihrem Team ein und verantworten die Umsetzung, bis sie in Produkt und Systemen läuft.',
       items: ['Produktdaten und DPP-Anbindung', 'DSGVO-konforme Datenflüsse und EU-Hosting', 'Sicherheitsupdates und SBOM für den Cyber Resilience Act', 'Direkte Zusammenarbeit mit Ihren EU-Kunden und Partnern'],
     },
     ai: {
@@ -86,7 +84,7 @@ const de: Dictionary = {
   steps: [
     { t: 'Analyse', d: '30-minütiges Erstgespräch' },
     { t: 'Umfang', d: 'Festpreis, schriftlich vereinbart' },
-    { t: 'Umsetzung', d: 'Ingenieure und Berater vor Ort' },
+    { t: 'Umsetzung', d: 'Ingenieure und Berater setzen praktisch um' },
     { t: 'Laufend konform', d: 'Monitoring und jährliche Prüfung' },
   ],
   timeline: [
