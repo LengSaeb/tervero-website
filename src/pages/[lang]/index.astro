@@ -91,7 +91,7 @@ const beads = Array.from({ length: 14 }, (_, i) => -78 + i * 12);
         <div><span class="cap" data-reveal>{d.work.caption}</span><h2 data-reveal>{d.work.title}</h2></div>
         <p class="lead" data-reveal>{d.work.lead}</p>
       </div>
-      <ul class="tiles work-list" data-reveal>
+      <ul class="work-list" data-reveal>
         {d.work.items.map((w) => (
           <li>{w.logo && <img class="logo" src={w.logo} alt="" width="36" height="36" loading="lazy" referrerpolicy="no-referrer" />}<span>{w.kind}</span><b>{w.url ? <a href={w.url} target="_blank" rel="noopener">{w.name} ↗</a> : w.name}</b>{w.d && <p>{w.d}</p>}</li>
         ))}
@@ -178,11 +178,12 @@ const beads = Array.from({ length: 14 }, (_, i) => -78 + i * 12);
 
   .work { border-top: 1px solid var(--line); }
   .work .s-head .lead { margin: 0; max-width: 32em; }
-  .work-list { list-style: none; padding: 0; margin: 0; }
-  .work-list li { background: #fff; padding: 26px; display: grid; gap: 10px; align-content: start; }
+  .work-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  .work-list li { background: #fff; padding: 26px; display: grid; gap: 10px; align-content: start; justify-items: start; }
+  .work-list span { font: 500 12px/1.4 var(--sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--mute); }
   .work-list b { font: var(--dw) 28px/1.15 var(--serif); }
-  .work-list b a { text-decoration: none; border-bottom: 1px solid var(--line); }
-  .work-list b a:hover { border-color: currentColor; }
+  .work-list b a { text-decoration: none; color: inherit; }
+  .work-list b a:hover { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
   .work-list .logo { width: 36px; height: 36px; margin-bottom: 8px; }
   .work-list p { margin: 0; color: var(--mute); font-size: 15px; }
 
@@ -200,7 +201,7 @@ const beads = Array.from({ length: 14 }, (_, i) => -78 + i * 12);
     .e-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(48px, 8vw, 120px); }
     .tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     .tiles a { min-height: 180px; align-content: space-between; }
-    .work-list li { min-height: 200px; }
+    .work-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     .t-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: end; }
   }
   @media (prefers-reduced-motion: reduce) { .manifesto { height: auto; } .stick { position: relative; height: auto; min-height: 100svh; } .down i { animation: none; } }
