@@ -4,7 +4,7 @@ const de: Dictionary = {
   meta: {
     title: 'Tervero: EU-Compliance und Umsetzung für chinesische Unternehmen',
     description:
-      'EU-Compliance, eingebettete Engineering-Teams und KI im Produktivbetrieb für Unternehmen aus China.',
+      'EU-Compliance, Forward-Deployed Engineering und KI im Produktivbetrieb für Unternehmen aus China.',
   },
   nav: {
     services: 'Leistungen',
@@ -26,13 +26,13 @@ const de: Dictionary = {
   },
   home: {
     h1: 'Ihr Team für Compliance und Umsetzung in Europa.',
-    caption: 'EU-Compliance · Eingebettete Engineering-Teams · KI im Produktivbetrieb',
+    caption: 'EU-Compliance · Forward-Deployed Engineering · KI im Produktivbetrieb',
     manifesto: 'Wir erstellen den Plan und setzen ihn selbst um.',
     problemTitle: 'Die Analyse liegt vor. Das Produkt darf trotzdem nicht in den Verkauf.',
     problemText: 'Meist hakt es an der Umsetzung: technische Unterlagen, Kennzeichnung und Systemänderungen, für die niemand zuständig ist. Unsere Berater und Ingenieure arbeiten als ein Team und setzen die Analyse direkt um.',
     engageCaption: 'Zusammenarbeit',
     engageTitle: 'Drei Formen der Zusammenarbeit.',
-    engageLead: 'Sie wählen je nach Projektphase. Umfang und Preis vereinbaren wir vor Beginn schriftlich.',
+    engageLead: 'Wir arbeiten projektbasiert. Umfang, Meilensteine und Preis vereinbaren wir vor Beginn schriftlich.',
     stepsCaption: 'Ablauf',
     stepsTitle: 'So läuft ein Projekt ab.',
     ctaTitle: 'Sprechen Sie mit unseren Beratern.',
@@ -47,9 +47,9 @@ const de: Dictionary = {
       deliver: ['Technische Unterlagen, Konformitätserklärungen und Kennzeichnung', 'Registrierungen, Meldungen und EU-Vertreter', 'Anforderungen in Prozesse und Systeme eingebaut'],
     },
     fde: {
-      title: 'Eingebettete Engineering-Teams (FDE)',
-      tag: 'Unsere Ingenieure in Ihrem Team',
-      short: 'Unsere Ingenieure arbeiten für einen vereinbarten Zeitraum in Ihrem Team und verantworten die Umsetzung: Integration, Betrieb in der EU und Übergabe.',
+      title: 'Forward-Deployed Engineering (FDE)',
+      tag: 'Ingenieure eingebettet in Ihr Team',
+      short: 'Unsere Forward-Deployed Engineers arbeiten eingebettet in Ihrem Team und entwickeln, integrieren und betreiben Systeme in Ihrer realen Umgebung, bis Ihr Team sie selbst übernehmen kann.',
       advise: ['Technisches Konzept und Architektur-Review', 'Projektplan und Meilensteine'],
       deliver: ['Ingenieure, die in Ihrem Team mitarbeiten', 'Systemintegration und Betrieb in der EU', 'Zusammenarbeit mit Ihren Kunden und Partnern in Europa', 'Übergabe, Dokumentation und Wissenstransfer'],
     },
@@ -69,12 +69,12 @@ const de: Dictionary = {
   },
   engagement: {
     title: 'Zusammenarbeit',
-    lead: 'Drei Formen der Zusammenarbeit, je nachdem, wo Sie stehen. Jede beginnt mit einer 30-minütigen Analyse; Umfang und Preis werden vor Projektstart schriftlich vereinbart.',
+    lead: 'Wir arbeiten projektbasiert. Jedes Projekt beginnt mit einer 30-minütigen Analyse; Umfang, Meilensteine und Preis werden vor Projektstart schriftlich vereinbart. Je nachdem, wo Sie stehen, gibt es drei Formen der Zusammenarbeit.',
     fitLabel: 'Geeignet für',
     billingLabel: 'Abrechnung',
     models: [
       { t: 'Projektumsetzung', d: 'Fester Umfang von der Analyse bis zur Inbetriebnahme, umgesetzt von unseren Beratern und Ingenieuren.', fit: 'Ein klares Ziel, etwa eine Produktlinie konform machen oder ein System in Betrieb nehmen.', billing: 'Festpreis pro Projekt' },
-      { t: 'Eingebettete Ingenieure', d: 'Unsere Ingenieure arbeiten in Ihrem Team und verantworten die Umsetzung gemeinsam mit Ihnen, so lange Sie sie brauchen.', fit: 'Laufende Projekte in Europa, die zusätzliche Engineering-Kapazität brauchen.', billing: 'Monatlich, pro Ingenieur' },
+      { t: 'FDE-Projekt', d: 'Unsere Forward-Deployed Engineers arbeiten eingebettet in Ihrem Team, liefern nach vereinbarten Zielen und Meilensteinen und übergeben System und Wissen an Ihr Team.', fit: 'Engineering-Arbeit, die in Ihren bestehenden Systemen entwickelt, integriert oder ausgerollt werden muss.', billing: 'Preis pro Projektphase' },
       { t: 'Betreuung nach der Inbetriebnahme', d: 'Wir halten Systeme, Unterlagen und Prozesse aktuell, wenn sich Regeln und Produkte ändern.', fit: 'Produkte und Systeme, die in der EU bereits auf dem Markt oder in Betrieb sind.', billing: 'Monatliche Pauschale' },
     ],
   },
