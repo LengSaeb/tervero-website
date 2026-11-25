@@ -93,7 +93,7 @@ const beads = Array.from({ length: 14 }, (_, i) => -78 + i * 12);
       </div>
       <ul class="tiles work-list" data-reveal>
         {d.work.items.map((w) => (
-          <li>{w.logo && <img class="logo" src={w.logo} alt="" width="36" height="36" loading="lazy" />}<span>{w.kind}</span><b>{w.url ? <a href={w.url} target="_blank" rel="noopener">{w.name} ↗</a> : w.name}</b>{w.d && <p>{w.d}</p>}</li>
+          <li>{w.logo && <img class="logo" src={w.logo} alt="" width="36" height="36" loading="lazy" referrerpolicy="no-referrer" />}<span>{w.kind}</span><b>{w.url ? <a href={w.url} target="_blank" rel="noopener">{w.name} ↗</a> : w.name}</b>{w.d && <p>{w.d}</p>}</li>
         ))}
       </ul>
     </div>
