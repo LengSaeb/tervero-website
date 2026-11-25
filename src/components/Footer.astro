@@ -1,46 +1,57 @@
 ---
-import { t, href, type Locale } from '../i18n';
-import { site } from '../config';
+import { t, href, switchLocale, locales, type Locale } from '../i18n';
+import { site, localeLabel } from '../config';
 interface Props { locale: Locale }
 const { locale } = Astro.props;
 const d = t(locale);
 const year = new Date().getFullYear();
+const path = Astro.url.pathname;
 ---
 
 <footer class="ftr">
-  <div class="wrap cols">
+  <div class="wrap top">
     <div>
-      <p class="name">{site.brand} <span>{site.brandZh}</span></p>
-      <p class="small">{d.footer.tagline}</p>
+      <p class="tag">{d.home.h1}</p>
+      <div class="ctas"><a class="btn light primary" href={href(locale, 'contact')}>{d.cta.book}</a><a class="btn light" href={href(locale, 'engagement')}>{d.cta.engagement}</a></div>
     </div>
-    <nav aria-label={d.nav.services}>
-      <b>{d.nav.services}</b>
-      {(['compliance', 'fde', 'ai'] as const).map((k) => <a href={`${href(locale, 'services')}#${k}`}>{d.services[k].title}</a>)}
-    </nav>
-    <nav aria-label="Footer">
-      <b>{site.brand}</b>
-      <a href={href(locale, 'engagement')}>{d.nav.engagement}</a>
-      <a href={href(locale, 'about')}>{d.nav.about}</a>
-      <a href={href(locale, 'contact')}>{d.nav.contact}</a>
-    </nav>
-    <nav aria-label="Legal">
-      <b>{d.legal.heading}</b>
-      <a href={href(locale, 'impressum')}>{d.legal.impressum}</a>
-      <a href={href(locale, 'privacy')}>{d.legal.privacy}</a>
-    </nav>
+    <div class="cols">
+      <nav aria-label={d.nav.services}>
+        <span class="cap">{d.nav.services}</span>
+        {(['compliance', 'fde', 'ai'] as const).map((k) => <a href={`${href(locale, 'services')}#${k}`}>{d.services[k].title}</a>)}
+      </nav>
+      <nav aria-label={site.brand}>
+        <span class="cap">{site.brand}</span>
+        <a href={href(locale, 'engagement')}>{d.nav.engagement}</a>
+        <a href={href(locale, 'about')}>{d.nav.about}</a>
+        <a href={href(locale, 'contact')}>{d.nav.contact}</a>
+      </nav>
+      <nav aria-label={d.legal.heading}>
+        <span class="cap">{d.legal.heading}</span>
+        <a href={href(locale, 'impressum')}>{d.legal.impressum}</a>
+        <a href={href(locale, 'privacy')}>{d.legal.privacy}</a>
+      </nav>
+    </div>
   </div>
-  <p class="wrap small copy">© {year} {site.legalName}</p>
+  <div class="wrap base">
+    <span>© {year} {site.legalName}</span>
+    <span class="langs">{locales.map((l) => <a href={switchLocale(path, l)} hreflang={l} aria-current={l === locale ? 'true' : undefined}>{localeLabel[l]}</a>)}</span>
+  </div>
+  <div class="giant" aria-hidden="true">TERVERO</div>
 </footer>
 
 <style>
-  .ftr { border-top: 1px solid var(--line); padding: 36px var(--gutter) 24px; }
-  .cols { display: grid; gap: 20px; grid-template-columns: minmax(0, 1fr); }
-  .name { font-weight: 800; font-size: 18px; margin: 0 0 4px; }
-  .name span { font-weight: 500; color: var(--mute); }
-  nav { display: flex; flex-direction: column; gap: 2px; }
-  nav b { font-size: 14px; margin-bottom: 4px; }
-  nav a { color: var(--ink); text-decoration: none; padding: 6px 0; }
-  nav a:hover { text-decoration: underline; }
-  .copy { margin-top: 20px; }
-  @media (min-width: 720px) { .cols { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.4fr) minmax(0, 1fr) minmax(0, 1fr); } }
+  .ftr { background: var(--night); color: var(--on-night); padding: clamp(80px, 12vw, 140px) var(--gutter) 0; overflow: hidden; position: relative; }
+  .top { display: grid; gap: 56px; grid-template-columns: minmax(0, 1fr); }
+  .tag { font: 300 clamp(30px, 4vw, 48px)/1.12 var(--serif); max-width: 14em; margin: 0; text-wrap: balance; }
+  .cols { display: grid; gap: 36px; grid-template-columns: repeat(auto-fit, minmax(11em, 1fr)); }
+  .cap { color: #8d989c; }
+  nav { display: flex; flex-direction: column; gap: 4px; }
+  nav a { color: var(--on-night); text-decoration: none; padding: 6px 0; font-size: 16px; }
+  nav a:hover { color: var(--signal); }
+  .base { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin-top: 80px; padding: 24px 0; border-top: 1px solid #24363f; font: 500 12px/1.4 var(--sans); letter-spacing: 0.08em; text-transform: uppercase; color: #8d989c; }
+  .langs { display: flex; gap: 16px; }
+  .langs a { color: #8d989c; text-decoration: none; }
+  .langs a[aria-current='true'] { color: var(--on-night); }
+  .giant { font: 300 clamp(80px, 22vw, 340px)/0.8 var(--serif); letter-spacing: -0.02em; color: #14262f; text-align: center; margin: 24px 0 -0.12em; user-select: none; white-space: nowrap; }
+  @media (min-width: 900px) { .top { grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); } }
 </style>

@@ -1,0 +1,43 @@
+---
+// Thin-line orbit drawing with coloured nodes travelling on the rings. Purely decorative.
+interface Props { variant?: 'hero' | 'pair' | 'quiet' }
+const { variant = 'hero' } = Astro.props;
+---
+
+{variant === 'hero' && (
+  <svg class="orb hero-orb" viewBox="-500 -500 1000 1000" aria-hidden="true">
+    <g class="spin s1"><circle r="470" class="ring" /><circle r="470" class="ring dash" transform="rotate(12)" /></g>
+    <g class="spin s2"><circle cx="-120" cy="-60" r="300" class="ring" /><circle cx="-120" cy="-60" r="300" class="node" style="--n:var(--c1)" /></g>
+    <g class="spin s3"><circle cx="140" cy="40" r="250" class="ring dash" /><circle cx="140" cy="40" r="250" class="node" style="--n:var(--signal)" /></g>
+    <g class="spin s4"><circle cx="0" cy="150" r="190" class="ring" /><circle cx="0" cy="150" r="190" class="node" style="--n:var(--c3)" /></g>
+  </svg>
+)}
+{variant === 'pair' && (
+  <svg class="orb pair-orb" viewBox="-500 -500 1000 1000" aria-hidden="true">
+    <circle r="440" class="ring dash" />
+    <g class="turn"><circle cx="0" cy="-130" r="250" class="ring" /><circle cx="0" cy="130" r="250" class="ring" /><line x1="0" y1="-440" x2="0" y2="440" class="ring" /><circle cx="0" cy="-380" r="13" class="dot" style="--n:var(--signal)" /><circle cx="0" cy="380" r="13" class="dot" style="--n:var(--c1)" /><circle cx="-210" cy="-60" r="4" class="dot" style="--n:var(--hair)" /><circle cx="210" cy="60" r="4" class="dot" style="--n:var(--hair)" /></g>
+  </svg>
+)}
+{variant === 'quiet' && (
+  <svg class="orb quiet-orb" viewBox="-500 -500 1000 1000" aria-hidden="true">
+    <g class="spin s1"><circle cx="-150" r="300" class="ring" /><circle cx="150" r="300" class="ring" /><circle cy="-150" r="300" class="ring dash" /><circle cy="150" r="300" class="ring dash" /></g>
+    <g class="spin s2"><circle cx="-150" r="300" class="node" style="--n:var(--c2)" /></g>
+    <g class="spin s3"><circle cy="150" r="300" class="node" style="--n:var(--c3)" /></g>
+  </svg>
+)}
+
+<style>
+  .orb { display: block; width: 100%; height: 100%; overflow: visible; }
+  .ring { fill: none; stroke: var(--hair); stroke-width: 1; vector-effect: non-scaling-stroke; }
+  .dash { stroke-dasharray: 2 6; }
+  /* a node is a ring drawn as one dot: dasharray puts a single round cap on the circle */
+  .node { fill: none; stroke: var(--n); stroke-width: 22; stroke-linecap: round; stroke-dasharray: 0 10000; }
+  .dot { fill: var(--n); }
+  .spin { transform-origin: 0 0; animation: spin 90s linear infinite; }
+  .s2 { animation-duration: 46s; }
+  .s3 { animation-duration: 64s; animation-direction: reverse; }
+  .s4 { animation-duration: 38s; }
+  .turn { transform-origin: 0 0; transform: rotate(calc(var(--p, 0) * 200deg)); transition: transform 0.1s linear; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @media (prefers-reduced-motion: reduce) { .spin { animation: none; } }
+</style>

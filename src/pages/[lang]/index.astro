@@ -1,73 +1,181 @@
 ---
 import Base from '../../layouts/Base.astro';
-import Tracks from '../../components/Tracks.astro';
+import Orbits from '../../components/Orbits.astro';
+import DotIcon from '../../components/DotIcon.astro';
 import { t, href, localePaths, type Locale } from '../../i18n';
 
 export const getStaticPaths = localePaths;
 const locale = Astro.params.lang as Locale;
 const d = t(locale);
 const h = d.home;
+const order = ['compliance', 'fde', 'ai'] as const;
+const rays = Array.from({ length: 72 }, (_, i) => i * 5);
+const ticks = Array.from({ length: 120 }, (_, i) => i * 1.5 - 90);
+const beads = Array.from({ length: 14 }, (_, i) => -78 + i * 12);
 ---
 
 <Base locale={locale}>
-  <section class="hero band">
-    <div class="wrap">
-      <h1>{h.h1}</h1>
-      <p class="lead">{h.lead}</p>
-      <div class="ctas">
-        <a class="btn primary" href={href(locale, 'contact')}>{d.cta.book}</a>
-        <a class="btn" href={href(locale, 'engagement')}>{d.cta.engagement}</a>
-      </div>
-      <Tracks locale={locale} />
+  <section class="hero">
+    <div class="hero-art"><Orbits variant="hero" /></div>
+    <div class="hero-text">
+      <h1 data-reveal>{h.h1}</h1>
+    </div>
+    <div class="hero-foot">
+      <span class="cap">{h.caption}</span>
+      <a class="down" href="#manifesto" aria-label="Scroll"><i></i></a>
     </div>
   </section>
 
-  <section class="band paper">
-    <div class="wrap split">
-      <h2 class="statement">{h.statementTitle}</h2>
-      <div>{h.statement.map((p) => <p>{p}</p>)}</div>
-    </div>
-  </section>
-
-  <section class="band">
-    <div class="wrap">
-      <h2>{h.engageTitle}</h2>
-      <p class="muted">{h.engageLead}</p>
-      <div class="grid three models">
-        {d.engagement.models.map((m) => (
-          <a class="card" href={href(locale, 'engagement')}>
-            <h3>{m.t}</h3>
-            <p>{m.d}</p>
-            <span class="more">{d.cta.more} →</span>
-          </a>
-        ))}
+  <section class="manifesto" id="manifesto" data-scroll>
+    <div class="stick">
+      <div class="m-art"><Orbits variant="pair" /></div>
+      <div class="m-text">
+        <h2 data-reveal>{h.manifesto}</h2>
+        <a class="btn primary" href={href(locale, 'contact')} data-reveal>{d.cta.book}</a>
       </div>
     </div>
   </section>
 
-  <section class="band paper">
-    <div class="wrap">
-      <h2>{h.stepsTitle}</h2>
-      <ol class="steps">{d.steps.map((s) => <li><b>{s.t}</b><span>{s.d}</span></li>)}</ol>
+  <section class="problem" data-scroll>
+    <div class="rays" aria-hidden="true">
+      <svg viewBox="-500 -500 1000 1000" preserveAspectRatio="xMidYMid slice">
+        <g class="fan">{rays.map((a) => <line x1="0" y1="0" x2="900" y2="0" transform={`rotate(${a})`} />)}</g>
+        <g class="arc">{ticks.map((a) => <line x1="-470" y1="0" x2="-452" y2="0" transform={`rotate(${a})`} />)}</g>
+        <g class="beads">{beads.map((a, i) => <circle cx="-410" cy="0" r={i === 6 ? 9 : 6} transform={`rotate(${a})`} class={i === 6 ? 'b1' : i === 8 ? 'b3' : i === 10 ? 'b2' : ''} />)}</g>
+        <circle r="9" class="hub" />
+      </svg>
+    </div>
+    <div class="wrap p-grid">
+      <div class="p-text">
+        <h2 data-reveal>{h.problemTitle}</h2>
+        <p data-reveal>{h.problemText}</p>
+      </div>
+      <div class="stack">
+        {order.map((k, i) => {
+          const s = d.services[k];
+          return (
+            <a class={`svc ${k}`} href={`${href(locale, 'services')}#${k}`} style={`--i:${i}`}>
+              <DotIcon kind={k} />
+              <div>
+                <span class="cap">{s.tag}</span>
+                <h3>{s.title}</h3>
+                <p>{s.short}</p>
+                <ul>{s.deliver.map((x) => <li>{x}</li>)}</ul>
+              </div>
+            </a>
+          );
+        })}
+      </div>
     </div>
   </section>
 
-  <section class="band cta-band">
+  <section class="band engage">
+    <div class="wrap e-grid">
+      <div class="e-art"><Orbits variant="quiet" /></div>
+      <div>
+        <span class="cap" data-reveal>{h.engageCaption}</span>
+        <h2 data-reveal>{h.engageTitle}</h2>
+        <p class="lead" data-reveal>{h.engageLead}</p>
+        <div class="tiles" data-reveal>
+          {d.engagement.models.map((m) => (
+            <a href={href(locale, 'engagement')}><b>{m.t}</b><span>{m.billing}</span></a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band steps-band">
     <div class="wrap">
-      <h2>{h.ctaTitle}</h2>
-      <p class="lead">{h.ctaText}</p>
-      <div class="ctas"><a class="btn primary" href={href(locale, 'contact')}>{d.cta.book}</a></div>
+      <div class="s-head">
+        <div><span class="cap" data-reveal>{h.stepsCaption}</span><h2 data-reveal>{h.stepsTitle}</h2></div>
+        <a class="arrow" href={href(locale, 'engagement')}>{d.cta.engagement}</a>
+      </div>
+      <ol class="steps" data-reveal>{d.steps.map((s) => <li><b>{s.t}</b><span>{s.d}</span></li>)}</ol>
+    </div>
+  </section>
+
+  <section class="band talk">
+    <div class="wrap t-grid">
+      <h2 data-reveal>{h.ctaTitle}</h2>
+      <div data-reveal>
+        <p class="lead">{h.ctaText}</p>
+        <div class="ctas"><a class="btn primary" href={href(locale, 'contact')}>{d.cta.book}</a></div>
+      </div>
     </div>
   </section>
 </Base>
 
 <style>
-  .hero { padding-top: clamp(36px, 7vw, 80px); }
-  .hero h1 { font-size: clamp(36px, 7vw, 68px); max-width: 15em; }
-  .statement { font-size: clamp(26px, 4vw, 40px); }
-  .models .card { display: flex; flex-direction: column; color: inherit; text-decoration: none; }
-  .models .card:hover { border-color: var(--ink); }
-  .more { margin-top: auto; padding-top: 8px; font-weight: 700; font-size: 14px; color: var(--link); }
-  .cta-band { background: var(--signal); }
-  .cta-band .lead { color: #222; }
+  /* hero: one centred serif line over drifting orbits */
+  .hero { position: relative; min-height: 100svh; display: grid; place-items: center; padding: 120px var(--gutter) 140px; overflow: hidden; }
+  .hero-art { position: absolute; left: 50%; top: 50%; width: min(150vh, 130vw); aspect-ratio: 1; transform: translate(-50%, -50%); pointer-events: none; }
+  .hero-text { position: relative; text-align: center; width: 100%; display: grid; justify-items: center; }
+  .hero h1 { font-size: clamp(40px, 6.4vw, 84px); max-width: 12em; }
+  .hero-text::before { content: ""; position: absolute; inset: -18% -8%; background: radial-gradient(closest-side, var(--bg) 62%, transparent); z-index: -1; }
+  .hero-text { isolation: isolate; }
+  .hero-foot { position: absolute; left: var(--gutter); right: var(--gutter); bottom: 32px; display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center; }
+  .hero-foot .cap { margin: 0; }
+  .down { width: 44px; height: 44px; border: 1px solid var(--hair); border-radius: 50%; display: grid; place-items: center; }
+  .down i { width: 8px; height: 8px; border-right: 1px solid var(--ink); border-bottom: 1px solid var(--ink); transform: translateY(-2px) rotate(45deg); animation: nudge 2.4s var(--ease) infinite; }
+  @keyframes nudge { 50% { transform: translateY(2px) rotate(45deg); } }
+
+  /* manifesto: pinned while the paired orbit turns with scroll */
+  .manifesto { height: 220vh; position: relative; }
+  .stick { position: sticky; top: 0; height: 100svh; display: grid; place-items: center; overflow: hidden; }
+  .m-art { position: absolute; width: min(110vh, 120vw); aspect-ratio: 1; }
+  .m-text { position: relative; text-align: center; padding: 0 var(--gutter); display: grid; justify-items: center; gap: 28px; }
+  .m-text h2 { max-width: 13em; margin: 0; font-size: clamp(32px, 5vw, 60px); background: color-mix(in srgb, var(--bg) 70%, transparent); }
+
+  /* problem: sticky statement on a turning ray fan, service cards stack on the right */
+  .problem { position: relative; padding: 0 var(--gutter) 30vh; }
+  .rays { position: sticky; top: 0; height: 100svh; margin-bottom: -100svh; overflow: hidden; pointer-events: none; }
+  .rays svg { width: 100%; height: 100%; }
+  .fan line { stroke: var(--line); stroke-width: 1; vector-effect: non-scaling-stroke; }
+  .arc line { stroke: var(--hair); stroke-width: 1; vector-effect: non-scaling-stroke; }
+  .fan, .arc, .beads { transform: rotate(calc(var(--p, 0) * -40deg)); transform-origin: 0 0; }
+  .beads circle { fill: #b9b2a3; }
+  .beads .b1 { fill: var(--c1); } .beads .b2 { fill: var(--c2); } .beads .b3 { fill: var(--c3); }
+  .hub { fill: #b9b2a3; }
+  .p-grid { position: relative; display: grid; gap: 48px; grid-template-columns: minmax(0, 1fr); padding-top: 18vh; }
+  .p-text { align-self: start; background: color-mix(in srgb, var(--bg) 78%, transparent); padding: 12px 0; }
+  .p-text h2 { font-size: clamp(32px, 4.4vw, 54px); }
+  .stack { display: grid; gap: 24px; }
+  .svc { display: grid; gap: 28px; align-content: space-between; min-height: 70svh; padding: clamp(24px, 3vw, 40px); border-radius: 4px; color: #fff; text-decoration: none; box-shadow: 0 -12px 40px rgba(11, 26, 34, 0.08); transition: transform 0.4s var(--ease); }
+  .svc:hover { transform: translateY(-4px); }
+  .svc .cap { color: inherit; opacity: 0.75; }
+  .svc h3 { font-size: clamp(30px, 3.4vw, 44px); }
+  .svc p { color: inherit; opacity: 0.9; }
+  .svc ul { list-style: none; margin: 18px 0 0; padding: 0; border-top: 1px solid color-mix(in srgb, currentColor 35%, transparent); }
+  .svc li { padding: 10px 0; border-bottom: 1px solid color-mix(in srgb, currentColor 20%, transparent); font-size: 15px; }
+  .compliance { background: var(--c1); }
+  .fde { background: var(--c2); }
+  .ai { background: var(--c3); color: var(--ink); }
+
+  /* engagement: orbit left, models right */
+  .e-grid { display: grid; gap: 48px; grid-template-columns: minmax(0, 1fr); align-items: center; }
+  .e-art { aspect-ratio: 1; max-width: 520px; width: 100%; margin: 0 auto; }
+  .tiles { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 36px; }
+  .tiles a { background: #fff; padding: 26px; text-decoration: none; display: grid; gap: 6px; transition: background 0.25s; }
+  .tiles a:hover { background: var(--paper); }
+  .tiles b { font: 300 24px/1.2 var(--serif); }
+  .tiles span { font: 500 12px/1.4 var(--sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--mute); }
+
+  .s-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 20px; margin-bottom: 48px; }
+  .s-head h2 { margin: 0; }
+  .talk { border-top: 1px solid var(--line); }
+  .t-grid { display: grid; gap: 28px; grid-template-columns: minmax(0, 1fr); }
+
+  @media (min-width: 900px) {
+    .p-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(48px, 8vw, 120px); }
+    .p-text { position: sticky; top: 30vh; }
+    .stack { gap: 0; }
+    .svc { position: sticky; top: calc(14vh + var(--i) * 28px); margin-bottom: 32vh; }
+    .svc:last-child { margin-bottom: 0; }
+    .e-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(48px, 8vw, 120px); }
+    .tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .tiles a { min-height: 180px; align-content: space-between; }
+    .t-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: end; }
+  }
+  @media (prefers-reduced-motion: reduce) { .manifesto { height: auto; } .stick { position: relative; height: auto; min-height: 100svh; } .down i { animation: none; } }
 </style>
