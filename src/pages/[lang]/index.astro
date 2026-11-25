@@ -25,25 +25,15 @@ const d = t(locale);
       <h2>{d.home.servicesTitle}</h2>
       <p class="muted">{d.home.servicesLead}</p>
       <ServiceCards locale={locale} />
-      <p style="margin-top:18px"><a href={href(locale, 'services')}>{d.cta.services} →</a></p>
     </div>
   </section>
 
   <section class="band paper">
-    <div class="wrap split">
-      <div>
-        <h2>{d.home.stepsTitle}</h2>
-        <ol class="steps">
-          {d.steps.map((s) => <li><b>{s.t}</b><span>{s.d}</span></li>)}
-        </ol>
-      </div>
-      <div>
-        <h2>{d.home.timelineTitle}</h2>
-        <ol class="timeline">
-          {d.timeline.map((r) => <li><time datetime={r.date}>{r.date}</time><span>{r.text}</span></li>)}
-        </ol>
-        <p class="small" style="margin-top:10px">{d.home.timelineNote}</p>
-      </div>
+    <div class="wrap">
+      <h2>{d.home.stepsTitle}</h2>
+      <ol class="steps">
+        {d.steps.map((s) => <li><b>{s.t}</b><span>{s.d}</span></li>)}
+      </ol>
     </div>
   </section>
 

@@ -59,7 +59,6 @@ p { margin: 0 0 12px; max-width: 68ch; }
 .card p { color: #44443f; font-size: 15px; }
 .card ul { margin: 8px 0 0; padding-left: 18px; font-size: 15px; color: #44443f; }
 .card li { margin-bottom: 4px; }
-.card.on { border: 2px solid var(--ink); box-shadow: inset 0 6px 0 var(--signal); }
 
 /* steps */
 .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -68,10 +67,6 @@ p { margin: 0 0 12px; max-width: 68ch; }
 .steps b { display: block; font-size: 17px; }
 .steps span { font-size: 14px; color: var(--mute); }
 
-/* timeline */
-.timeline { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--ink); }
-.timeline li { display: grid; grid-template-columns: 7em minmax(0, 1fr); gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--line); }
-.timeline time { font-weight: 700; white-space: nowrap; font-variant-numeric: tabular-nums; }
 
 /* definition list */
 .facts { display: grid; grid-template-columns: minmax(0, 1fr); margin: 0; border-top: 2px solid var(--ink); }
