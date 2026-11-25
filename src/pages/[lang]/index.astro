@@ -12,13 +12,19 @@ const order = ['compliance', 'fde', 'ai'] as const;
 const rays = Array.from({ length: 72 }, (_, i) => i * 5);
 const ticks = Array.from({ length: 120 }, (_, i) => i * 1.5 - 90);
 const beads = Array.from({ length: 14 }, (_, i) => -78 + i * 12);
+// Hero headline split for the staggered rise: words for en/de; for zh, chunks at spaces/ZWSP,
+// each chunk kept on one line and revealed character by character.
+const cjk = locale === 'zh';
+let n = 0;
+// zh: the first ZWSP is a forced line break, later ones are optional break points.
+const chunks = (cjk ? h.h1.split('\u200B') : h.h1.split(/\s+/)).filter(Boolean).map((w) => (cjk ? [...w] : [w]).map((c) => ({ c, i: n++ })));
 ---
 
 <Base locale={locale}>
   <section class="hero">
     <div class="hero-art"><Orbits variant="hero" /></div>
     <div class="hero-text">
-      <h1 data-reveal>{h.h1}</h1>
+      <h1 class="kinetic" aria-label={h.h1.replace(/\u200B/g, '')}>{chunks.map((w, j) => (<>{j > 0 && (cjk ? (j === 1 ? <br /> : <wbr />) : ' ')}<span class="w" aria-hidden="true">{w.map((x) => (<span class="g" style={`--i:${x.i}`}>{x.c}</span>))}</span></>))}</h1>
     </div>
     <div class="hero-foot">
       <span class="cap">{h.caption}</span>
@@ -69,21 +75,28 @@ const beads = Array.from({ length: 14 }, (_, i) => -78 + i * 12);
     </div>
   </section>
 
-  <section class="band engage">
-    <div class="wrap e-grid">
-      <div class="e-art"><Orbits variant="quiet" /></div>
-      <div>
-        <span class="cap" data-reveal>{h.engageCaption}</span>
-        <h2 data-reveal>{h.engageTitle}</h2>
-        <p class="lead" data-reveal>{h.engageLead}</p>
-        <ol class="method" data-reveal>
-          {h.method.map((m, i) => (
-            <li><span>{String(i + 1).padStart(2, '0')}</span><b>{m.t}</b><p>{m.d}</p></li>
-          ))}
-        </ol>
-        <a class="arrow" href={href(locale, 'engagement')}>{d.cta.engagement}</a>
+  <section class="engage" data-scroll style={`--n:${h.method.length}`}>
+    <div class="e-stick"><div class="wrap">
+      <div class="m-head">
+        <div>
+          <span class="cap" data-reveal>{h.engageCaption}</span>
+          <h2 data-reveal>{h.engageTitle}</h2>
+        </div>
+        <div class="m-side" data-reveal>
+          <p>{h.engageLead}</p>
+          <a class="arrow" href={href(locale, 'engagement')}>{d.cta.engagement}</a>
+        </div>
       </div>
-    </div>
+      <ol class="method">
+        {h.method.map((m, i) => (
+          <li class={`step s${i + 1}`} style={`--k:${i}`}>
+            <span class="num">{String(i + 1).padStart(2, '0')}</span>
+            <div><b>{m.t}</b><p>{m.d}</p></div>
+          </li>
+        ))}
+      </ol>
+      <div class="e-bar" aria-hidden="true"><i></i></div>
+    </div></div>
   </section>
 
   <section class="band work">
@@ -117,7 +130,17 @@ const beads = Array.from({ length: 14 }, (_, i) => -78 + i * 12);
   .hero-art { position: absolute; left: 50%; top: 50%; width: min(150vh, 130vw); aspect-ratio: 1; transform: translate(-50%, -50%); pointer-events: none; }
   .hero-text { position: relative; text-align: center; width: 100%; display: grid; justify-items: center; }
   .hero h1 { font-size: clamp(40px, 6.4vw, 84px); max-width: 12em; hyphens: manual; }
-  :global(:lang(zh)) .hero h1 { word-break: keep-all; }
+  :global(:lang(zh)) .hero h1 { max-width: none; }
+  /* kinetic headline: each word (zh: each character) rises out of a mask, staggered */
+  .kinetic .w { display: inline-block; white-space: nowrap; overflow: hidden; vertical-align: top; padding-bottom: 0.12em; margin-bottom: -0.12em; }
+  .kinetic .g { display: inline-block; white-space: pre; transform: translateY(110%) rotate(4deg); opacity: 0; animation: rise 1.1s var(--ease) forwards; animation-delay: calc(200ms + var(--i) * 90ms); }
+  :global(:lang(zh)) .kinetic .g { animation-delay: calc(200ms + var(--i) * 55ms); }
+  @keyframes rise { to { transform: none; opacity: 1; } }
+  /* orbits burst in, then drift; the whole drawing zooms and turns as the hero scrolls away */
+  .hero-art { animation: orbIn 2.2s var(--ease) both; }
+  .hero-art :global(svg) { transform: scale(calc(1 + var(--sy, 0) * 0.35)) rotate(calc(var(--sy, 0) * 40deg)); }
+  .hero-text { transform: translateY(calc(var(--sy, 0) * -18vh)); opacity: calc(1 - var(--sy, 0) * 1.4); }
+  @keyframes orbIn { from { opacity: 0; transform: translate(-50%, -50%) scale(0.6) rotate(-30deg); } }
   .hero-text::before { content: ""; position: absolute; inset: -18% -8%; background: radial-gradient(closest-side, var(--bg) 62%, transparent); z-index: -1; }
   .hero-text { isolation: isolate; }
   .hero-foot { position: absolute; left: var(--gutter); right: var(--gutter); bottom: 32px; display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center; }
@@ -159,8 +182,6 @@ const beads = Array.from({ length: 14 }, (_, i) => -78 + i * 12);
   .ai { background: var(--c3); color: var(--ink); }
 
   /* engagement: orbit left, models right */
-  .e-grid { display: grid; gap: 48px; grid-template-columns: minmax(0, 1fr); align-items: center; }
-  .e-art { aspect-ratio: 1; max-width: 520px; width: 100%; margin: 0 auto; }
 
   .work { border-top: 1px solid var(--line); }
   .work .s-head .lead { margin: 0; max-width: 32em; }
@@ -173,12 +194,28 @@ const beads = Array.from({ length: 14 }, (_, i) => -78 + i * 12);
   .work-list .logo { width: 36px; height: 36px; margin-bottom: 8px; }
   .work-list p { margin: 0; color: var(--mute); font-size: 15px; }
 
-  .engage { position: relative; z-index: 1; background: var(--bg); }
-  .method { list-style: none; padding: 0; margin: 36px 0 32px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
-  .method li { background: #fff; padding: 26px; display: grid; gap: 10px; align-content: start; }
-  .method span { font: 500 12px/1.4 var(--sans); letter-spacing: 0.08em; color: var(--mute); }
-  .method b { font: var(--dw) 26px/1.2 var(--serif); }
-  .method p { margin: 0; color: var(--mute); font-size: 15px; }
+  /* method: pinned dark band; the three cards rise into place in turn as you scroll */
+  .engage { position: relative; z-index: 1; background: var(--night); color: var(--on-night); height: calc(100svh + var(--n) * 70svh); }
+  .e-stick { position: sticky; top: 0; min-height: 100svh; display: grid; align-content: center; padding: clamp(84px, 11vh, 120px) var(--gutter) 40px; overflow: hidden; }
+  .engage .cap { color: #8d989c; }
+  .engage h2 { font-size: clamp(36px, 6vw, 84px); max-width: 11em; margin: 0; }
+  :global(:lang(zh)) .engage h2 { word-break: keep-all; }
+  .m-head { display: grid; gap: 20px; margin-bottom: clamp(28px, 5vh, 64px); }
+  .m-side p { margin: 0 0 14px; color: #b9c0c2; max-width: 26em; }
+  .m-side .arrow { color: var(--on-night); }
+  .method { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: minmax(0, 1fr); }
+  .step { --t: clamp(0, (var(--p, 0) * (var(--n) + 0.4) - var(--k)) * 1.6, 1); grid-area: 1 / 1; position: relative; overflow: hidden; border-radius: 6px; padding: 22px; min-height: 250px; display: flex; flex-direction: column; justify-content: space-between; color: #fff; box-shadow: 0 -20px 60px rgba(0, 0, 0, 0.35);
+    transform: translateY(calc((1 - var(--t)) * 115% + var(--k) * 14px)) rotate(calc((1 - var(--t)) * 7deg)); transform-origin: 0 100%; will-change: transform; }
+  .step:first-child { --t: 1; }
+  .s1 { background: var(--c1); }
+  .s2 { background: var(--c2); }
+  .s3 { background: var(--c3); color: var(--ink); }
+  .step::after { content: ''; position: absolute; right: -30%; top: -40%; width: 90%; aspect-ratio: 1; border-radius: 50%; border: 1px solid currentColor; opacity: 0.3; transform: scale(calc(0.6 + var(--t) * 0.5)) rotate(calc(var(--t) * 60deg)); }
+  .num { font: var(--dw) clamp(56px, 9vw, 120px)/0.8 var(--serif); letter-spacing: -0.04em; opacity: 0.35; }
+  .step b { display: block; font: var(--dw) clamp(40px, 5vw, 72px)/1 var(--serif); letter-spacing: -0.02em; margin-bottom: 12px; }
+  .step p { margin: 0; font-size: 17px; line-height: 1.5; max-width: 22em; }
+  .e-bar { display: none; height: 2px; margin-top: 28px; background: rgba(236, 235, 227, 0.15); }
+  .e-bar i { display: block; height: 100%; background: var(--on-night); transform-origin: 0 0; transform: scaleX(var(--p, 0)); }
 
   .s-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 20px; margin-bottom: 48px; }
   .s-head h2 { margin: 0; }
@@ -191,10 +228,17 @@ const beads = Array.from({ length: 14 }, (_, i) => -78 + i * 12);
     .stack { gap: 0; }
     .svc { position: sticky; top: calc(14vh + var(--i) * 28px); margin-bottom: 32vh; }
     .svc:last-child { margin-bottom: 0; }
-    .e-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(48px, 8vw, 120px); }
-    .method { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .method { grid-template-columns: repeat(var(--n), minmax(0, 1fr)); gap: 16px; }
+    .e-bar { display: block; }
+    .step { grid-area: auto; min-height: min(440px, 52vh); padding: 28px; transform: translateY(calc((1 - var(--t)) * 120%)) rotate(calc((1 - var(--t)) * 8deg)); }
+    .m-head { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); align-items: end; }
     .work-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     .t-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: end; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .kinetic .g, .hero-art { animation: none; opacity: 1; transform: none; }
+    .hero-art { transform: translate(-50%, -50%); }
+    .engage { height: auto; } .e-stick { position: relative; } .step { --t: 1; grid-area: auto; transform: none; } .method { gap: 16px; } .e-bar { display: none; }
   }
   @media (prefers-reduced-motion: reduce) { .manifesto { height: auto; } .stick { position: relative; height: auto; min-height: 100svh; } .down i { animation: none; } }
 </style>
