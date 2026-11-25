@@ -28,8 +28,8 @@ const de: Dictionary = {
     h1: 'Ihr Team für Compliance und Umsetzung in Europa.',
     caption: 'EU-Compliance · Forward-Deployed Engineering · KI im Produktivbetrieb',
     manifesto: 'Wir erstellen den Plan und setzen ihn um.',
-    problemTitle: 'Wir übernehmen auch die Arbeit nach der Analyse.',
-    problemText: 'Nach einer Compliance-Analyse müssen technische Unterlagen, Kennzeichnung und Systemänderungen noch umgesetzt werden. Unsere Berater und Ingenieure erledigen diese Arbeit als ein Team, bis zur Markteinführung.',
+    problemTitle: 'Von der Compliance bis zur Umsetzung: ein Team für alles.',
+    problemText: 'Regelprüfung, technische Unterlagen, Kennzeichnung, Systemänderungen und Markteinführung: Unsere Berater und Ingenieure erledigen alles in einem Team.',
     engageCaption: 'Zusammenarbeit',
     engageTitle: 'Drei Formen der Zusammenarbeit.',
     engageLead: 'Wir arbeiten projektbasiert. Umfang, Meilensteine und Preis vereinbaren wir vor Beginn schriftlich.',
@@ -83,9 +83,9 @@ const de: Dictionary = {
     title: 'Partner und Projekte.',
     lead: 'Partner, mit denen wir arbeiten, und Projekte, an denen wir beteiligt waren.',
     items: [
-      { name: 'Novawerk', kind: 'Partner', d: 'Eine offene Non-Profit-Community, in der Projekte in der Frühphase Mitwirkende finden.', url: 'https://novawerk.io', logo: '/logos/novawerk.svg' },
-      { name: 'Aaden POS', kind: 'Projekt · KI im Betrieb', d: 'Kassensystem (POS). Wir haben im laufenden Betrieb von Aaden mehrere KI-Agenten eingesetzt und so Betriebs- und Automatisierungskosten gesenkt.', url: '', logo: '' },
-      { name: 'Lengsaeb Booking', kind: 'Eigenes Produkt', d: 'Unser selbst entwickeltes Buchungssystem für Veranstaltungsorte: Online-Reservierung und Verwaltung.', url: '', logo: '' },
+      { name: 'Novawerk', kind: 'Partner · KI im Betrieb', d: 'Eine offene Non-Profit-Community. Wir haben die KI-Agenten aufgebaut, die den Arbeitsalltag erledigen: E-Mails entwerfen, Meetings vorbereiten, das Aufgabenboard pflegen. Nach außen geht nichts ohne Freigabe eines Mitglieds.', url: 'https://novawerk.io', logo: '/logos/novawerk.svg' },
+      { name: 'Aaden POS', kind: 'Projekt · KI im Betrieb', d: 'Kassensystem für Handel und Gastronomie in Europa. Wir haben im laufenden Betrieb von Aaden mehrere KI-Agenten eingesetzt und so Betriebs- und Automatisierungskosten gesenkt.', url: 'https://aaden-pos.com', logo: 'https://aaden-pos.com/wp-content/uploads/2024/08/cropped-Logo-ohne-SchriftPC-192x192.png' },
+      { name: 'Lengsaeb Booking', kind: 'Eigenes Produkt · Compliance und KI', d: 'Tickets, Kasse und Kundenbindung für Freizeitanlagen wie Trampolinparks und Kletterhallen, konform mit den deutschen Kassenvorgaben (TSE, DSFinV-K). Wir entwickeln dafür einen KI-Telefonassistenten, der Anrufe annimmt, Fragen beantwortet und direkt bucht.', url: 'https://site.lengsaeb.com', logo: '/logos/lengsaeb.svg' },
     ],
   },
   steps: [

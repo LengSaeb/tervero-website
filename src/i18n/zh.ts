@@ -27,8 +27,8 @@ const zh: Dictionary = {
     h1: '您在欧洲的\u200B合规与交付团队',
     caption: '欧盟合规 · 前线部署工程（FDE） · AI 生产落地',
     manifesto: '我们制定方案，并负责实施',
-    problemTitle: '评估之后的工作，也由我们来做',
-    problemText: '合规评估完成后，还需要编写技术文件、制作标签、改造系统。我们的顾问和工程师在同一个团队中完成这些工作，直到产品合规上市。',
+    problemTitle: '从合规到交付，一个团队全部完成',
+    problemText: '法规梳理、技术文件、标签、系统改造，一直到产品上市，都由同一个团队的顾问和工程师完成。',
     engageCaption: '合作方式',
     engageTitle: '三种合作方式',
     engageLead: '所有合作都按项目交付，开工前书面确认范围、里程碑和价格。',
@@ -82,9 +82,9 @@ const zh: Dictionary = {
     title: '合作伙伴与案例',
     lead: '与我们合作的伙伴，以及我们参与过的项目。',
     items: [
-      { name: 'Novawerk', kind: '合作伙伴', d: '开放的非营利社区，为早期项目提供交流和协作的平台。', url: 'https://novawerk.io', logo: '/logos/novawerk.svg' },
-      { name: 'Aaden POS', kind: '项目案例 · AI 运营', d: '收银系统（POS）。我们在 Aaden 的日常运营中部署了多个 AI 智能体，降低了运营成本和自动化开销。', url: '', logo: '' },
-      { name: 'Lengsaeb Booking', kind: '自研产品', d: '我们自主开发的场馆预订系统，用于在线预订和场馆管理。', url: '', logo: '' },
+      { name: 'Novawerk', kind: '合作伙伴 · AI 运营', d: '开放的非营利社区。我们为 Novawerk 搭建了日常运营用的 AI 智能体：起草邮件、准备会议、维护任务看板。所有对外内容都由成员审核后才发出。', url: 'https://novawerk.io', logo: '/logos/novawerk.svg' },
+      { name: 'Aaden POS', kind: '项目案例 · AI 运营', d: '面向欧洲零售和餐饮门店的收银系统。我们在 Aaden 的日常运营中部署了多个 AI 智能体，降低运营成本和自动化开销。', url: 'https://aaden-pos.com', logo: 'https://aaden-pos.com/wp-content/uploads/2024/08/cropped-Logo-ohne-SchriftPC-192x192.png' },
+      { name: 'Lengsaeb Booking', kind: '自研产品 · 合规与 AI', d: '面向蹦床馆、攀岩馆等休闲场馆的票务、收银与会员系统，符合德国收银法规（TSE、DSFinV-K）。我们正在为它开发 AI 电话助理：自动接听来电、回答问题并直接完成预订。', url: 'https://site.lengsaeb.com', logo: '/logos/lengsaeb.svg' },
     ],
   },
   steps: [

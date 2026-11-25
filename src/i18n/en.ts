@@ -29,8 +29,8 @@ const en = {
     h1: 'Your compliance and delivery team in Europe.',
     caption: 'EU compliance · Forward-deployed engineering · AI in production',
     manifesto: 'We write the plan and carry it out.',
-    problemTitle: 'We also do the work that follows the assessment.',
-    problemText: 'After a compliance assessment, technical files, labels and system changes still have to be done. Our consultants and engineers do this work as one team, through to market launch.',
+    problemTitle: 'From compliance to delivery, one team does it all.',
+    problemText: 'Rule mapping, technical files, labels, system changes and market launch: our consultants and engineers handle all of it in one team.',
     engageCaption: 'How we engage',
     engageTitle: 'Three ways to work with us.',
     engageLead: 'We work on a project basis. Scope, milestones and price are agreed in writing before work starts.',
@@ -85,9 +85,9 @@ const en = {
     title: 'Partners and projects.',
     lead: 'Partners we work with and projects we have worked on.',
     items: [
-      { name: 'Novawerk', kind: 'Partner', d: 'An open, non-profit community where early-stage projects find contributors.', url: 'https://novawerk.io', logo: '/logos/novawerk.svg' },
-      { name: 'Aaden POS', kind: 'Project · AI in operations', d: 'Point-of-sale system. We deployed several AI agents in Aaden’s day-to-day operations, lowering operating and automation costs.', url: '', logo: '' },
-      { name: 'Lengsaeb Booking', kind: 'Our product', d: 'Our own venue booking system for online reservations and venue management.', url: '', logo: '' },
+      { name: 'Novawerk', kind: 'Partner · AI in operations', d: 'An open, non-profit community. We built the AI agents that run its day-to-day work: drafting emails, preparing meetings and keeping the task board in order. Nothing goes out until a member has approved it.', url: 'https://novawerk.io', logo: '/logos/novawerk.svg' },
+      { name: 'Aaden POS', kind: 'Project · AI in operations', d: 'Point-of-sale system for retail and restaurants in Europe. We deployed several AI agents in Aaden’s day-to-day operations, lowering operating and automation costs.', url: 'https://aaden-pos.com', logo: 'https://aaden-pos.com/wp-content/uploads/2024/08/cropped-Logo-ohne-SchriftPC-192x192.png' },
+      { name: 'Lengsaeb Booking', kind: 'Our product · Compliance and AI', d: 'Tickets, till and loyalty for leisure venues such as trampoline parks and climbing gyms, compliant with German till rules (TSE, DSFinV-K). We are building an AI phone assistant for it that answers calls, handles questions and books directly into the system.', url: 'https://site.lengsaeb.com', logo: '/logos/lengsaeb.svg' },
     ],
   },
   steps: [
