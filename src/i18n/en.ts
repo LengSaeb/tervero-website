@@ -28,9 +28,9 @@ const en = {
   home: {
     h1: 'Your compliance and delivery team in Europe.',
     caption: 'EU compliance · Forward-deployed engineering · AI in production',
-    manifesto: 'We write the plan, and we carry it out.',
-    problemTitle: 'The assessment is done. The product still can’t ship.',
-    problemText: 'The gap is usually execution: technical files, labels and system changes that nobody owns. Our consultants and engineers work as one team, so the assessment turns straight into work.',
+    manifesto: 'We write the plan and carry it out.',
+    problemTitle: 'We also do the work that follows the assessment.',
+    problemText: 'After a compliance assessment, technical files, labels and system changes still have to be done. Our consultants and engineers do this work as one team, through to market launch.',
     engageCaption: 'How we engage',
     engageTitle: 'Three ways to work with us.',
     engageLead: 'We work on a project basis. Scope, milestones and price are agreed in writing before work starts.',
@@ -50,7 +50,7 @@ const en = {
     fde: {
       title: 'Forward-deployed engineering (FDE)',
       tag: 'Engineers embedded in your team',
-      short: 'Our forward-deployed engineers embed in your team and build, integrate and ship systems in your real environment, until your team can run them on its own.',
+      short: 'Our forward-deployed engineers embed in your team and build, integrate and ship systems inside your existing setup, until your team can run them on its own.',
       advise: ['Technical approach and architecture review', 'Delivery plan and milestones'],
       deliver: ['Engineers who work inside your team', 'System integration and EU deployment', 'Working with your EU customers and partners', 'Handover, documentation and knowledge transfer'],
     },
@@ -64,7 +64,7 @@ const en = {
   },
   servicesPage: {
     title: 'Services',
-    lead: 'Three service lines, one way of working. First we advise and agree the plan and scope with you in writing. Then our consultants and engineers deliver it.',
+    lead: 'Each service has two parts. First we advise and agree the plan and scope with you in writing. Then our consultants and engineers carry it out.',
     advise: 'Advise',
     deliver: 'Deliver',
   },
@@ -89,7 +89,7 @@ const en = {
     title: 'About Tervero',
     lead: 'Tervero (泰帆诺) is a compliance and engineering consultancy based in Germany, working with Chinese companies that sell or operate in the EU.',
     paras: [
-      'We work in Chinese, English and German, so nothing gets lost between your headquarters and your partners or authorities in Europe.',
+      'We work in Chinese, English and German and talk directly with your headquarters, your partners in Europe and the authorities.',
     ],
     factsTitle: 'At a glance',
     facts: [

@@ -27,9 +27,9 @@ const de: Dictionary = {
   home: {
     h1: 'Ihr Team für Compliance und Umsetzung in Europa.',
     caption: 'EU-Compliance · Forward-Deployed Engineering · KI im Produktivbetrieb',
-    manifesto: 'Wir erstellen den Plan und setzen ihn selbst um.',
-    problemTitle: 'Die Analyse liegt vor. Das Produkt darf trotzdem nicht in den Verkauf.',
-    problemText: 'Meist hakt es an der Umsetzung: technische Unterlagen, Kennzeichnung und Systemänderungen, für die niemand zuständig ist. Unsere Berater und Ingenieure arbeiten als ein Team und setzen die Analyse direkt um.',
+    manifesto: 'Wir erstellen den Plan und setzen ihn um.',
+    problemTitle: 'Wir übernehmen auch die Arbeit nach der Analyse.',
+    problemText: 'Nach einer Compliance-Analyse müssen technische Unterlagen, Kennzeichnung und Systemänderungen noch umgesetzt werden. Unsere Berater und Ingenieure erledigen diese Arbeit als ein Team, bis zur Markteinführung.',
     engageCaption: 'Zusammenarbeit',
     engageTitle: 'Drei Formen der Zusammenarbeit.',
     engageLead: 'Wir arbeiten projektbasiert. Umfang, Meilensteine und Preis vereinbaren wir vor Beginn schriftlich.',
@@ -49,7 +49,7 @@ const de: Dictionary = {
     fde: {
       title: 'Forward-Deployed Engineering (FDE)',
       tag: 'Ingenieure eingebettet in Ihr Team',
-      short: 'Unsere Forward-Deployed Engineers arbeiten eingebettet in Ihrem Team und entwickeln, integrieren und betreiben Systeme in Ihrer realen Umgebung, bis Ihr Team sie selbst übernehmen kann.',
+      short: 'Unsere Forward-Deployed Engineers arbeiten eingebettet in Ihrem Team und entwickeln, integrieren und betreiben Systeme in Ihrer bestehenden Infrastruktur, bis Ihr Team sie selbst übernehmen kann.',
       advise: ['Technisches Konzept und Architektur-Review', 'Projektplan und Meilensteine'],
       deliver: ['Ingenieure, die in Ihrem Team mitarbeiten', 'Systemintegration und Betrieb in der EU', 'Zusammenarbeit mit Ihren Kunden und Partnern in Europa', 'Übergabe, Dokumentation und Wissenstransfer'],
     },
@@ -63,7 +63,7 @@ const de: Dictionary = {
   },
   servicesPage: {
     title: 'Leistungen',
-    lead: 'Drei Leistungen, eine Arbeitsweise: Zuerst beraten wir Sie und legen gemeinsam Plan und Umfang schriftlich fest. Dann setzen unsere Berater und Ingenieure ihn um.',
+    lead: 'Jede Leistung hat zwei Teile: Zuerst beraten wir Sie und legen Plan und Umfang schriftlich fest. Dann setzen unsere Berater und Ingenieure ihn um.',
     advise: 'Beratung',
     deliver: 'Umsetzung',
   },
@@ -88,7 +88,7 @@ const de: Dictionary = {
     title: 'Über Tervero',
     lead: 'Tervero (泰帆诺) ist eine Compliance- und Engineering-Beratung mit Sitz in Deutschland für chinesische Unternehmen, die in der EU verkaufen oder tätig sind.',
     paras: [
-      'Wir arbeiten auf Chinesisch, Englisch und Deutsch, damit zwischen Ihrer Zentrale und Ihren Partnern und Behörden in Europa nichts verloren geht.',
+      'Wir arbeiten auf Chinesisch, Englisch und Deutsch und sprechen direkt mit Ihrer Zentrale, Ihren Partnern in Europa und den Behörden.',
     ],
     factsTitle: 'Auf einen Blick',
     facts: [
