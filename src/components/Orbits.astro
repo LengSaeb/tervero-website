@@ -33,10 +33,10 @@ const { variant = 'hero' } = Astro.props;
   /* a node is a ring drawn as one dot: dasharray puts a single round cap on the circle */
   .node { fill: none; stroke: var(--n); stroke-width: 22; stroke-linecap: round; stroke-dasharray: 0 10000; }
   .dot { fill: var(--n); }
-  .spin { transform-origin: 0 0; animation: spin 90s linear infinite; }
-  .s2 { animation-duration: 46s; }
-  .s3 { animation-duration: 64s; animation-direction: reverse; }
-  .s4 { animation-duration: 38s; }
+  .spin { transform-origin: 0 0; animation: spin 60s linear infinite; }
+  .s2 { animation-duration: 24s; }
+  .s3 { animation-duration: 34s; animation-direction: reverse; }
+  .s4 { animation-duration: 18s; }
   .turn { transform-origin: 0 0; transform: rotate(calc(var(--p, 0) * 200deg)); transition: transform 0.1s linear; }
   @keyframes spin { to { transform: rotate(360deg); } }
   @media (prefers-reduced-motion: reduce) { .spin { animation: none; } }

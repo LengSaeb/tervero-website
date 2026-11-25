@@ -58,6 +58,7 @@ const canonical = new URL(path, Astro.site);
       let ticking = false;
       const update = () => {
         ticking = false;
+        document.documentElement.style.setProperty('--sy', String(Math.min(1, scrollY / innerHeight)));
         for (const el of secs) {
           const r = el.getBoundingClientRect();
           const span = Math.max(1, r.height - innerHeight);
