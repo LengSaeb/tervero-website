@@ -85,6 +85,20 @@ const beads = Array.from({ length: 14 }, (_, i) => -78 + i * 12);
     </div>
   </section>
 
+  <section class="band work">
+    <div class="wrap">
+      <div class="s-head">
+        <div><span class="cap" data-reveal>{d.work.caption}</span><h2 data-reveal>{d.work.title}</h2></div>
+        <p class="lead" data-reveal>{d.work.lead}</p>
+      </div>
+      <ul class="tiles work-list" data-reveal>
+        {d.work.items.map((w) => (
+          <li><span>{w.kind}</span><b>{w.name}</b>{w.d && <p>{w.d}</p>}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
   <section class="band steps-band">
     <div class="wrap">
       <div class="s-head">
@@ -162,6 +176,13 @@ const beads = Array.from({ length: 14 }, (_, i) => -78 + i * 12);
   .tiles b { font: var(--dw) 24px/1.2 var(--serif); }
   .tiles span { font: 500 12px/1.4 var(--sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--mute); }
 
+  .work { border-top: 1px solid var(--line); }
+  .work .s-head .lead { margin: 0; max-width: 32em; }
+  .work-list { list-style: none; padding: 0; margin: 0; }
+  .work-list li { background: #fff; padding: 26px; display: grid; gap: 10px; align-content: start; }
+  .work-list b { font: var(--dw) 28px/1.15 var(--serif); }
+  .work-list p { margin: 0; color: var(--mute); font-size: 15px; }
+
   .s-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 20px; margin-bottom: 48px; }
   .s-head h2 { margin: 0; }
   .talk { border-top: 1px solid var(--line); }
@@ -176,6 +197,7 @@ const beads = Array.from({ length: 14 }, (_, i) => -78 + i * 12);
     .e-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(48px, 8vw, 120px); }
     .tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     .tiles a { min-height: 180px; align-content: space-between; }
+    .work-list li { min-height: 200px; }
     .t-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: end; }
   }
   @media (prefers-reduced-motion: reduce) { .manifesto { height: auto; } .stick { position: relative; height: auto; min-height: 100svh; } .down i { animation: none; } }

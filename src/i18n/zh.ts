@@ -77,6 +77,16 @@ const zh: Dictionary = {
       { t: '上线后支持', d: '法规和产品变化时，我们持续更新您的系统、文件和流程。', fit: '已在欧盟市场销售或运行的产品和系统。', billing: '按月服务费' },
     ],
   },
+  work: {
+    caption: '案例',
+    title: '合作伙伴与案例',
+    lead: '与我们合作的伙伴，以及我们参与过的项目。',
+    items: [
+      { name: 'Novawerk', kind: '合作伙伴', d: '' },
+      { name: 'Aaden POS', kind: '项目案例', d: '收银系统（POS）' },
+      { name: 'Lengsaeb Booking', kind: '自研产品', d: '场馆预订系统' },
+    ],
+  },
   steps: [
     { t: '诊断', d: '30 分钟通话，明确目标与约束' },
     { t: '方案', d: '范围、架构与报价，书面确认' },
