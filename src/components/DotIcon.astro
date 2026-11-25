@@ -1,0 +1,16 @@
+---
+// 7x7 dot-matrix glyph, one per service line.
+interface Props { kind: 'compliance' | 'fde' | 'ai' }
+const glyphs = {
+  compliance: ['#######', '#.....#', '#....##', '#...#.#', '##.#..#', '#.#...#', '#######'],
+  fde: ['#......', '.#..###', '..#.#.#', '...##.#', '..#.#.#', '.#..###', '#......'],
+  ai: ['#..#..#', '.#.#.#.', '..###..', '#######', '..###..', '.#.#.#.', '#..#..#'],
+};
+const rows = glyphs[Astro.props.kind];
+---
+
+<svg class="dot-icon" viewBox="0 0 70 70" width="56" height="56" aria-hidden="true">
+  {rows.flatMap((row, y) => [...row].map((c, x) => (
+    <circle cx={x * 10 + 5} cy={y * 10 + 5} r={c === '#' ? 3.4 : 1.2} fill="currentColor" opacity={c === '#' ? 1 : 0.35} />
+  )))}
+</svg>
