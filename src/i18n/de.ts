@@ -2,12 +2,13 @@ import type { Dictionary } from './en';
 
 const de: Dictionary = {
   meta: {
-    title: 'Tervero: Beratung und Umsetzung für Unternehmen aus China in Europa',
+    title: 'Tervero: erfahrene Compliance-Beratung, direkt in Europa',
     description:
       'EU-Compliance, Forward-Deployed Engineering und KI in Produktivsystemen, von der Beratung bis zur Umsetzung.',
   },
   nav: {
     services: 'Leistungen',
+    engagement: 'Zusammenarbeit',
     about: 'Über uns',
     contact: 'Kontakt',
     menu: 'Menü',
@@ -20,31 +21,42 @@ const de: Dictionary = {
     contact: 'Kontakt aufnehmen',
     services: 'So läuft jede Leistung ab',
     servicesShort: 'Unsere Leistungen',
+    engagement: 'Zusammenarbeit',
+    more: 'Mehr erfahren',
   },
   home: {
-    h1: 'Von der Beratung bis zur Umsetzung. Ein Team.',
-    lead: 'Wir helfen Unternehmen aus China, in Europa Dinge umzusetzen. Wir erarbeiten mit Ihnen den Plan und setzen ihn mit unseren Leuten um, bis er läuft.',
-    servicesTitle: 'Was wir tun',
-    servicesLead: 'Jede Leistung umfasst Beratung und Umsetzung.',
-    stepsTitle: 'So arbeiten wir',
-    ctaTitle: 'Beginnen wir mit 30 Minuten',
-    ctaText: 'Erzählen Sie uns, was Sie in Europa erreichen wollen. Wir sagen Ihnen, was zuerst zu tun ist und wie wir helfen können.',
+    h1: 'Erfahrene Compliance-Beratung, direkt in Europa.',
+    lead: 'Wir beraten Unternehmen aus China beim Eintritt in die EU und setzen die Beratung in Produkten, Prozessen und Systemen um. EU-Compliance, Forward-Deployed Engineering und KI-Transformation aus einem Team.',
+    live: 'Live',
+    statementTitle: 'Beratung gibt die Richtung vor. Umsetzung liefert das Ergebnis.',
+    statement: [
+      'Viele Beratungen enden mit einem Bericht. Unsere Berater und Ingenieure arbeiten in einem Team: Wer den Plan macht, setzt ihn auch um, bis das System läuft und der Prozess funktioniert.',
+      'Wir sitzen in Europa und kennen Behörden, Vertriebswege und Partner hier. Wir arbeiten auf Chinesisch, Englisch und Deutsch, damit Ihr Team in China und Ihre Partner hier dasselbe hören.',
+    ],
+    engageTitle: 'Drei Formen der Zusammenarbeit',
+    engageLead: 'Je nach Phase. Umfang und Preis werden vor Projektstart schriftlich vereinbart.',
+    stepsTitle: 'So läuft ein Projekt',
+    ctaTitle: 'Sprechen Sie mit unseren Beratern',
+    ctaText: 'Erzählen Sie uns, was Sie in Europa erreichen wollen. In 30 Minuten sagen wir Ihnen, was zuerst zu tun ist und wie wir helfen können.',
   },
   services: {
     compliance: {
       title: 'EU-Compliance, von der Beratung bis zur Umsetzung',
+      tag: 'Regeln, Unterlagen, Systeme',
       short: 'Klären, welche EU-Regeln für Ihre Produkte und Ihr Geschäft gelten, und die Anforderungen dann wirklich erfüllen.',
       advise: ['Anwendbare Regeln und Gap-Analyse', 'Compliance-Roadmap und Prioritäten', 'Konzept für Produkt- und Daten-Compliance'],
       deliver: ['Technische Unterlagen, Konformitätserklärungen und Kennzeichnung', 'Registrierungen, Meldungen und EU-Vertreter', 'Anforderungen in Prozesse und Systeme eingebaut'],
     },
     fde: {
       title: 'Forward-Deployed Engineering (FDE)',
+      tag: 'Unsere Leute, Ihre Umsetzung',
       short: 'Wir setzen unsere Ingenieure in Ihrem Team ein und verantworten die Umsetzung, bis sie in Produkt und Systemen läuft.',
       advise: ['Technisches Konzept und Architektur-Review', 'Lieferplan und Meilensteine'],
       deliver: ['Ingenieure, die in Ihrem Team mitliefern', 'Systemintegration und Deployment in der EU', 'Zusammenarbeit mit Ihren Kunden und Partnern in Europa', 'Übergabe, Dokumentation und Wissenstransfer'],
     },
     ai: {
       title: 'KI-Transformation',
+      tag: 'In Produktivsysteme',
       short: 'Wir bringen KI-Fähigkeiten und -Anwendungen in Ihre Produktivsysteme, zuverlässig im Betrieb und konform mit EU-Regeln.',
       advise: ['Auswahl der Anwendungsfälle und Machbarkeit', 'Architektur, Daten und AI-Act-Konzept'],
       deliver: ['KI in bestehende Produktivsysteme integriert', 'Assistenten, Dokumentenverarbeitung und Automatisierung im laufenden Betrieb', 'Monitoring, Evaluierung und Rollback im Produktivbetrieb'],
@@ -56,6 +68,17 @@ const de: Dictionary = {
     advise: 'Beratung',
     deliver: 'Umsetzung',
   },
+  engagement: {
+    title: 'Zusammenarbeit',
+    lead: 'Drei Formen der Zusammenarbeit, je nachdem, wo Sie stehen. Jede beginnt mit einer 30-minütigen Analyse; Umfang und Preis werden vor Projektstart schriftlich vereinbart.',
+    fitLabel: 'Passt für',
+    billingLabel: 'Abrechnung',
+    models: [
+      { t: 'Projektumsetzung', d: 'Fester Umfang von der Analyse bis zum Go-live, umgesetzt von unseren Beratern und Ingenieuren.', fit: 'Ein klares Ziel, etwa eine Produktlinie konform machen oder ein System live bringen.', billing: 'Festpreis pro Projekt' },
+      { t: 'FDE-Ingenieure', d: 'Unsere Ingenieure arbeiten in Ihrem Team und verantworten die Umsetzung mit Ihnen, so lange Sie sie brauchen.', fit: 'Laufende Arbeit in Europa, die Umsetzung braucht und nicht nur Rat.', billing: 'Monatlich, pro Ingenieur' },
+      { t: 'Betreuung nach dem Go-live', d: 'Wir halten Systeme, Unterlagen und Prozesse aktuell, wenn sich Regeln und Produkte ändern.', fit: 'Produkte und Systeme, die bereits in der EU live sind.', billing: 'Monatliche Pauschale' },
+    ],
+  },
   steps: [
     { t: 'Analyse', d: '30-Minuten-Gespräch zu Zielen und Rahmen' },
     { t: 'Konzept', d: 'Umfang, Architektur und Preis, schriftlich' },
@@ -64,7 +87,7 @@ const de: Dictionary = {
   ],
   about: {
     title: 'Über Tervero',
-    lead: 'Tervero (泰帆诺) ist ein deutsches Beratungs- und Umsetzungsunternehmen, das Firmen aus China hilft, in Europa Dinge umzusetzen.',
+    lead: 'Tervero (泰帆诺) ist eine erfahrene Compliance-Beratung mit Sitz in Europa. Wir begleiten Unternehmen aus China beim Eintritt in die EU, von der Beratung bis zur Umsetzung.',
     paras: [
       'Viele Projekte enden mit einem Bericht. Bei uns setzen dieselben Leute, die den Plan machen, ihn auch um, bis das System läuft und der Prozess funktioniert.',
       'Wir arbeiten auf Chinesisch, Englisch und Deutsch, damit Ihr Team in China und Ihre Partner in Europa dasselbe hören.',
@@ -93,6 +116,7 @@ const de: Dictionary = {
     bookText: 'Buchen Sie ein 30-minütiges Gespräch direkt in unserem Kalender.',
   },
   legal: {
+    heading: 'Rechtliches',
     impressum: 'Impressum',
     privacy: 'Datenschutz',
     germanBinding: 'Die deutsche Fassung dieser Seite ist verbindlich.',

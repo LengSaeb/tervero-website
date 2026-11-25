@@ -3,12 +3,13 @@
 
 const en = {
   meta: {
-    title: 'Tervero: consulting and delivery for companies from China in Europe',
+    title: 'Tervero: senior compliance consultants, based in Europe',
     description:
       'EU compliance, forward-deployed engineering and AI in production systems, from advice to delivery.',
   },
   nav: {
     services: 'Services',
+    engagement: 'How we engage',
     about: 'About',
     contact: 'Contact',
     menu: 'Menu',
@@ -21,31 +22,42 @@ const en = {
     contact: 'Get in touch',
     services: 'See how each service works',
     servicesShort: 'Our services',
+    engagement: 'How we engage',
+    more: 'Learn more',
   },
   home: {
-    h1: 'From advice to delivery. One team.',
-    lead: 'We help companies from China get things done in Europe. We work out the plan with you, then put our people on it until it runs.',
-    servicesTitle: 'What we do',
-    servicesLead: 'Every service line covers both the advice and the delivery.',
-    stepsTitle: 'How we work',
-    ctaTitle: 'Start with a 30-minute call',
-    ctaText: 'Tell us what you want to get done in Europe. We will tell you what to do first and how we can help.',
+    h1: 'Senior compliance consultants, based in Europe.',
+    lead: 'We advise companies from China entering the EU, then put the advice into their products, processes and systems. EU compliance, forward-deployed engineering and AI transformation, from one team.',
+    live: 'Live',
+    statementTitle: 'Advice sets the direction. Delivery produces the result.',
+    statement: [
+      'Much consulting stops at a report. Our consultants and engineers work in one team, so the people who make the plan also deliver it, until the system is live and the process runs.',
+      'We are based in Europe and know its regulators, channels and partners. We work in Chinese, English and German, so your team in China and your partners here hear the same story.',
+    ],
+    engageTitle: 'Three ways to work with us',
+    engageLead: 'Choose by stage. Scope and price are agreed in writing before work starts.',
+    stepsTitle: 'How a project runs',
+    ctaTitle: 'Talk to our consultants',
+    ctaText: 'Tell us what you want to get done in Europe. In 30 minutes we will tell you what to do first and how we can help.',
   },
   services: {
     compliance: {
       title: 'EU compliance, advice to delivery',
+      tag: 'Rules, files and systems',
       short: 'Find out which EU rules apply to your products and business, then get the requirements done.',
       advise: ['Applicable rules and gap assessment', 'Compliance roadmap and priorities', 'Design of product and data compliance'],
       deliver: ['Technical files, declarations and labels', 'Registrations, filings and EU representatives', 'Requirements built into processes and systems'],
     },
     fde: {
       title: 'Forward-deployed engineering (FDE)',
+      tag: 'Our people, your delivery',
       short: 'We embed our engineers in your team and own the delivery, until it runs in your product and systems.',
       advise: ['Technical approach and architecture review', 'Delivery plan and milestones'],
       deliver: ['Engineers who join your team and ship with it', 'System integration and EU deployment', 'Working with your EU customers and partners', 'Handover, documentation and knowledge transfer'],
     },
     ai: {
       title: 'AI transformation',
+      tag: 'Into production systems',
       short: 'We deploy AI capabilities and applications into your production systems, built to run reliably and to EU rules.',
       advise: ['Use-case selection and feasibility', 'Architecture, data and AI Act design'],
       deliver: ['AI integrated into existing production systems', 'Assistants, document processing and automation in live workflows', 'Monitoring, evaluation and rollback in production'],
@@ -57,6 +69,17 @@ const en = {
     advise: 'Advise',
     deliver: 'Deliver',
   },
+  engagement: {
+    title: 'How we engage',
+    lead: 'Three ways to work with us, depending on where you are. Every engagement starts with a 30-minute diagnosis, and scope and price are agreed in writing before work starts.',
+    fitLabel: 'Suits',
+    billingLabel: 'Billing',
+    models: [
+      { t: 'Project delivery', d: 'A fixed scope from diagnosis to go-live, delivered by our consultants and engineers.', fit: 'One clear goal, such as getting a product line compliant or a system live.', billing: 'Fixed price per project' },
+      { t: 'FDE engineers', d: 'Our engineers join your team and own the delivery with you, for as long as you need them.', fit: 'Ongoing work in Europe that needs hands, not only advice.', billing: 'Monthly, per engineer' },
+      { t: 'Support after go-live', d: 'We keep systems, documents and processes up to date as rules and products change.', fit: 'Products and systems already live in the EU.', billing: 'Monthly retainer' },
+    ],
+  },
   steps: [
     { t: 'Diagnose', d: '30-minute call on goals and constraints' },
     { t: 'Plan', d: 'Scope, architecture and price, in writing' },
@@ -65,7 +88,7 @@ const en = {
   ],
   about: {
     title: 'About Tervero',
-    lead: 'Tervero (泰帆诺) is a German consulting and delivery company that helps companies from China get things done in Europe.',
+    lead: 'Tervero (泰帆诺) is a senior compliance consultancy based in Europe. We help companies from China enter the EU, from advice to delivery.',
     paras: [
       'Many projects stop at a report. We work differently: the people who make the plan also deliver it, until the system is live and the process runs.',
       'We work in Chinese, English and German, so your team in China and your partners in Europe hear the same story.',
@@ -94,6 +117,7 @@ const en = {
     bookText: 'Book a 30-minute call directly in our calendar.',
   },
   legal: {
+    heading: 'Legal',
     impressum: 'Legal notice',
     privacy: 'Privacy policy',
     germanBinding: 'The German version of this page is legally binding.',

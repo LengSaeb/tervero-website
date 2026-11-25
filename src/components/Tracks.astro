@@ -1,0 +1,56 @@
+---
+// Homepage picture: each service line drawn as a track from advice (grey) to delivery (ink) to live.
+import { t, href, type Locale } from '../i18n';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const d = t(locale);
+const order = ['compliance', 'fde', 'ai'] as const;
+---
+
+<div class="tracks" role="table" aria-label={d.nav.services}>
+  <div class="row head" role="row">
+    <span role="columnheader">{d.nav.services}</span>
+    <span role="columnheader">{d.servicesPage.advise}</span>
+    <span role="columnheader">{d.servicesPage.deliver}</span>
+    <span role="columnheader" class="lv">{d.home.live}</span>
+  </div>
+  {order.map((key) => {
+    const s = d.services[key];
+    return (
+      <a class="row" role="row" href={`${href(locale, 'services')}#${key}`}>
+        <span class="nm" role="cell"><b>{s.title}</b><small>{s.tag}</small></span>
+        <span class="seg" role="cell"><ul>{s.advise.slice(0, 2).map((i) => <li>{i}</li>)}</ul></span>
+        <span class="seg dl" role="cell"><ul>{s.deliver.slice(0, 2).map((i) => <li>{i}</li>)}</ul></span>
+        <span class="end" role="cell" aria-label={d.home.live}><i></i></span>
+      </a>
+    );
+  })}
+</div>
+
+<style>
+  .tracks { margin-top: clamp(28px, 5vw, 48px); border-top: 2px solid var(--ink); }
+  .row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--line); color: inherit; text-decoration: none; }
+  a.row:hover b { text-decoration: underline; }
+  .head { display: none; }
+  .nm { grid-column: 1 / -1; margin-bottom: 10px; }
+  .nm b { display: block; font-size: 18px; line-height: 1.3; }
+  .nm small { display: block; font-size: 14px; color: var(--mute); }
+  .seg { position: relative; padding-top: 16px; font-size: 14px; color: #33332f; }
+  .seg::before { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 6px; border-radius: 3px; background: var(--concrete); }
+  .seg.dl::before { background: var(--ink); }
+  .seg ul { list-style: none; margin: 0; padding: 0; }
+  .seg li { padding: 2px 0; }
+  .end { display: none; }
+  @media (min-width: 900px) {
+    .row { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr) minmax(0, 1.2fr) 64px; column-gap: 0; padding: 20px 0; }
+    .head { display: grid; padding: 10px 0; font-size: 13px; font-weight: 700; color: var(--mute); }
+    .head span { padding-right: 14px; }
+    .head .lv { text-align: center; padding: 0; }
+    .nm { grid-column: auto; margin: 0; padding-right: 14px; }
+    .seg { padding: 18px 14px 0 0; }
+    .seg::before { right: 14px; }
+    .seg.dl::before { right: 0; }
+    .end { display: flex; justify-content: center; }
+    .end i { width: 22px; height: 22px; margin-top: -8px; border-radius: 50%; background: var(--signal); border: 2.5px solid var(--ink); }
+  }
+</style>
