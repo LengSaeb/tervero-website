@@ -1,16 +1,16 @@
 ---
 import { t, type Locale } from '../i18n';
-interface Props { locale: Locale; highlight?: string }
-const { locale, highlight } = Astro.props;
+interface Props { locale: Locale }
+const { locale } = Astro.props;
 const d = t(locale);
 const order = ['compliance', 'fde', 'ai'] as const;
 ---
 
-<div class="grid three" data-services>
+<div class="grid three">
   {order.map((key) => {
     const s = d.services[key];
     return (
-      <article class:list={['card', { on: key === highlight }]} data-service={key}>
+      <article class="card">
         <h3>{s.title}</h3>
         <p>{s.short}</p>
         <ul>{s.items.map((i) => <li>{i}</li>)}</ul>

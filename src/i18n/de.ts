@@ -8,7 +8,7 @@ const de: Dictionary = {
   },
   nav: {
     services: 'Leistungen',
-    check: 'Tools',
+    check: 'Produkte',
     insights: 'Wissen',
     about: 'Über uns',
     contact: 'Kontakt',
@@ -26,29 +26,9 @@ const de: Dictionary = {
   },
   home: {
     h1: 'In Europa ankommen. Dauerhaft konform.',
-    lead: 'Für Unternehmen aus China, drei Leistungen aus einer Hand: Compliance-Beratung und Umsetzung, Forward-Deployed Engineering (FDE) und KI in produktiven Systemen.',
-    facts: [
-      ['FDE-Modell', 'unsere Ingenieure, Ihre Umsetzung'],
-      ['3 Leistungen', 'Compliance · Engineering · KI'],
-      ['3 Sprachen', 'Deutsch · English · 中文'],
-    ],
-    routeTitle: 'Ihre Route nach Europa: Wählen Sie einen Schritt',
-    stations: [
-      { name: 'Analyse', note: 'Markt, Regeln, Risiken', service: 'compliance' },
-      { name: 'Compliance', note: 'CE, GPSR, EPR, DPP, DSGVO', service: 'compliance' },
-      { name: 'Engineering', note: 'Ingenieure in Ihrem Team', service: 'fde' },
-      { name: 'KI integrieren', note: 'in produktive Systeme', service: 'ai' },
-      { name: 'Betrieb', note: 'Kunden, Partner, Support', service: 'fde' },
-      { name: 'Laufend konform', note: 'Monitoring und Updates', service: 'compliance' },
-    ],
+    lead: 'Für Unternehmen aus China auf dem Weg in die EU: von den geltenden Regeln bis zu Systemen, die wirklich laufen.',
     servicesTitle: 'Drei Leistungsbereiche',
     servicesLead: 'Ein Team, das Regulierung und Code versteht.',
-    scenariosTitle: 'Wo stehen Sie heute?',
-    scenarios: [
-      { t: 'Markteintritt in die EU', d: 'Wir klären, welche Regeln für Ihr Produkt gelten, schließen Lücken und erledigen Registrierungen und Unterlagen.' },
-      { t: 'Umsetzungskräfte gesucht', d: 'Wir setzen Forward-Deployed Engineers in Ihrem Team ein. Sie arbeiten mit Ihren Kunden und Partnern in Europa und bauen die Marktanforderungen in Ihre Systeme ein.' },
-      { t: 'KI in die Produktion bringen', d: 'Wir bringen KI vom Pilotprojekt in den Betrieb: integriert, überwacht und EU-konform.' },
-    ],
     stepsTitle: 'So arbeiten wir',
     timelineTitle: 'Wichtige EU-Termine',
     timelineNote: 'Vereinfacht. Verbindlich sind die Daten im Amtsblatt der EU.',
@@ -95,7 +75,7 @@ const de: Dictionary = {
     { date: '2027-12-11', text: 'CRA gilt vollständig' },
   ],
   tools: {
-    title: 'Tools',
+    title: 'Produkte',
     lead: 'Kleine, kostenlose Tools zur ersten Orientierung. Sie laufen in Ihrem Browser, es werden keine Daten an uns gesendet.',
     nextTitle: 'Als Nächstes',
     next: ['Readiness-Check für den Digitalen Produktpass', 'EU-Regelfinder nach Produktkategorie'],

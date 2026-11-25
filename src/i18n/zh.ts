@@ -7,7 +7,7 @@ const zh: Dictionary = {
   },
   nav: {
     services: '服务',
-    check: '工具',
+    check: '产品',
     insights: '法规库',
     about: '关于',
     contact: '联系',
@@ -25,29 +25,9 @@ const zh: Dictionary = {
   },
   home: {
     h1: '在欧洲落地，持续合规。',
-    lead: '为进入欧洲的中国企业提供三条服务线：合规咨询与落地、FDE 前置部署工程，以及在生产级系统中部署 AI 能力与应用。',
-    facts: [
-      ['FDE 模式', '我们出人，帮你落地'],
-      ['3 条服务线', '合规 · 工程 · AI'],
-      ['3 种语言', '中 · 英 · 德'],
-    ],
-    routeTitle: '你的欧洲落地路线：点选一个阶段，看谁来帮你',
-    stations: [
-      { name: '评估', note: '市场、法规与风险', service: 'compliance' },
-      { name: '合规', note: 'CE、GPSR、EPR、DPP、GDPR', service: 'compliance' },
-      { name: '工程落地', note: '工程师加入你的团队', service: 'fde' },
-      { name: '接入 AI', note: '部署进生产系统', service: 'ai' },
-      { name: '运营', note: '客户、伙伴与支持', service: 'fde' },
-      { name: '持续合规', note: '监测与更新', service: 'compliance' },
-    ],
+    lead: '帮助中国企业进入欧洲：从弄清适用的法规，到系统真正跑起来。',
     servicesTitle: '三条服务线',
     servicesLead: '同一个团队，既懂法规，也会写代码。',
-    scenariosTitle: '你现在处在哪种情况？',
-    scenarios: [
-      { t: '要进入欧盟市场', d: '我们梳理你的产品适用哪些法规，补齐缺口，把注册和文件真正做完。' },
-      { t: '需要有人把事情做出来', d: '我们派出 FDE 工程师加入你的团队，对接你的欧洲客户和伙伴，把市场要求直接做进你的系统。' },
-      { t: '要把 AI 用进生产', d: '我们把 AI 从试点带到生产环境：接入现有系统，可监控，并符合欧盟规则。' },
-    ],
     stepsTitle: '我们怎么做',
     timelineTitle: '欧盟关键日期',
     timelineNote: '简化版，具体日期以欧盟官方公报为准。',
@@ -94,7 +74,7 @@ const zh: Dictionary = {
     { date: '2027-12-11', text: 'CRA 全面适用' },
   ],
   tools: {
-    title: '工具',
+    title: '产品',
     lead: '用于初步判断的免费小工具，全部在你的浏览器里运行，不会把数据发给我们。',
     nextTitle: '即将推出',
     next: ['数字产品护照就绪度检查', '按产品品类查询适用的欧盟法规'],
