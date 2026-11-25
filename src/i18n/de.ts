@@ -78,6 +78,16 @@ const de: Dictionary = {
       { t: 'Betreuung nach der Inbetriebnahme', d: 'Wir halten Systeme, Unterlagen und Prozesse aktuell, wenn sich Regeln und Produkte ändern.', fit: 'Produkte und Systeme, die in der EU bereits auf dem Markt oder in Betrieb sind.', billing: 'Monatliche Pauschale' },
     ],
   },
+  work: {
+    caption: 'Referenzen',
+    title: 'Partner und Projekte.',
+    lead: 'Partner, mit denen wir arbeiten, und Projekte, an denen wir beteiligt waren.',
+    items: [
+      { name: 'Novawerk', kind: 'Partner', d: '' },
+      { name: 'Aaden POS', kind: 'Projekt', d: 'Kassensystem (POS)' },
+      { name: 'Lengsaeb Booking', kind: 'Eigenes Produkt', d: 'Buchungssystem für Veranstaltungsorte' },
+    ],
+  },
   steps: [
     { t: 'Analyse', d: '30-Minuten-Gespräch zu Zielen und Rahmen' },
     { t: 'Konzept', d: 'Umfang, Architektur und Preis, schriftlich' },

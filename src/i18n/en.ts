@@ -79,6 +79,17 @@ const en = {
       { t: 'Support after go-live', d: 'We keep systems, documents and processes up to date as rules and products change.', fit: 'Products and systems already on the EU market.', billing: 'Monthly retainer' },
     ],
   },
+  // Partners and past work. Only facts the founders confirmed; add descriptions, links and logos as they are supplied.
+  work: {
+    caption: 'Work',
+    title: 'Partners and projects.',
+    lead: 'Partners we work with and projects we have worked on.',
+    items: [
+      { name: 'Novawerk', kind: 'Partner', d: '' },
+      { name: 'Aaden POS', kind: 'Project', d: 'Point-of-sale system' },
+      { name: 'Lengsaeb Booking', kind: 'Our product', d: 'Venue booking system' },
+    ],
+  },
   steps: [
     { t: 'Diagnose', d: '30-minute call on goals and constraints' },
     { t: 'Plan', d: 'Scope, architecture and price, in writing' },
