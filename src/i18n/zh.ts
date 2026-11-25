@@ -82,9 +82,9 @@ const zh: Dictionary = {
     title: '合作伙伴与案例',
     lead: '与我们合作的伙伴，以及我们参与过的项目。',
     items: [
-      { name: 'Novawerk', kind: '合作伙伴', d: '', url: 'https://novawerk.io' },
-      { name: 'Aaden POS', kind: '项目案例 · AI 运营', d: '收银系统（POS）。我们在其运营中部署了多个 AI 智能体，降低运营成本和自动化开销。', url: '' },
-      { name: 'Lengsaeb Booking', kind: '自研产品', d: '场馆预订系统', url: '' },
+      { name: 'Novawerk', kind: '合作伙伴', d: '开放的非营利社区，为早期项目提供交流和协作的平台。', url: 'https://novawerk.io' },
+      { name: 'Aaden POS', kind: '项目案例 · AI 运营', d: '收银系统（POS）。我们在 Aaden 的日常运营中部署了多个 AI 智能体，降低了运营成本和自动化开销。', url: '' },
+      { name: 'Lengsaeb Booking', kind: '自研产品', d: '我们自主开发的场馆预订系统，用于在线预订和场馆管理。', url: '' },
     ],
   },
   steps: [

@@ -85,9 +85,9 @@ const en = {
     title: 'Partners and projects.',
     lead: 'Partners we work with and projects we have worked on.',
     items: [
-      { name: 'Novawerk', kind: 'Partner', d: '', url: 'https://novawerk.io' },
-      { name: 'Aaden POS', kind: 'Project · AI in operations', d: 'Point-of-sale system. We deployed several AI agents in its operations to reduce operating and automation costs.', url: '' },
-      { name: 'Lengsaeb Booking', kind: 'Our product', d: 'Venue booking system', url: '' },
+      { name: 'Novawerk', kind: 'Partner', d: 'An open, non-profit community where early-stage projects find contributors.', url: 'https://novawerk.io' },
+      { name: 'Aaden POS', kind: 'Project · AI in operations', d: 'Point-of-sale system. We deployed several AI agents in Aaden’s day-to-day operations, lowering operating and automation costs.', url: '' },
+      { name: 'Lengsaeb Booking', kind: 'Our product', d: 'Our own venue booking system for online reservations and venue management.', url: '' },
     ],
   },
   steps: [
