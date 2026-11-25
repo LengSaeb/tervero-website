@@ -33,13 +33,13 @@ src/
   layouts/Base.astro   <head>, hreflang, header, footer, mobile CTA dock
   components/          Header, Footer, Dock, Route, ServiceCards, EprCheck
   pages/index.astro    root: redirects to the visitor's language (default en)
-  pages/[lang]/        home, services, check, insights, about, contact, impressum, privacy
+  pages/[lang]/        home, services, about, contact, impressum, privacy
 ```
 
 ## Content workflow
 
 - Edit copy in `src/i18n/*.ts`. Adding a key to `en.ts` makes the build fail until `zh.ts` and `de.ts` have it too.
-- Keep regulation names and codes (GPSR, CRA, EPR...) consistent across languages.
+- Keep regulation names and codes (GPSR, CRA, AI Act...) consistent across languages.
 - Legal pages (Impressum, Datenschutz) are German and binding for all locales.
 
 ## Deploy on Vercel
@@ -61,4 +61,4 @@ Live project: Vercel team **Novawerk**, project `tervero-website`. Every push to
 ## Related knowledge
 
 - `LengSaeb/project-draco`: DPP (Digital Product Passport) knowledge base, source for the Insights section.
-- `LengSaeb/draco-epr-check`: EPR registration self-check (WeChat mini program + registry verification backend). The website's `/check` page is a simplified, client-side version for Germany.
+- `LengSaeb/draco-epr-check`: EPR registration self-check (WeChat mini program + registry verification backend).
