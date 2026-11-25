@@ -83,9 +83,9 @@ const de: Dictionary = {
     title: 'Partner und Projekte.',
     lead: 'Partner, mit denen wir arbeiten, und Projekte, an denen wir beteiligt waren.',
     items: [
-      { name: 'Novawerk', kind: 'Partner', d: 'Eine offene Non-Profit-Community, in der Projekte in der Frühphase Mitwirkende finden.', url: 'https://novawerk.io' },
-      { name: 'Aaden POS', kind: 'Projekt · KI im Betrieb', d: 'Kassensystem (POS). Wir haben im laufenden Betrieb von Aaden mehrere KI-Agenten eingesetzt und so Betriebs- und Automatisierungskosten gesenkt.', url: '' },
-      { name: 'Lengsaeb Booking', kind: 'Eigenes Produkt', d: 'Unser selbst entwickeltes Buchungssystem für Veranstaltungsorte: Online-Reservierung und Verwaltung.', url: '' },
+      { name: 'Novawerk', kind: 'Partner', d: 'Eine offene Non-Profit-Community, in der Projekte in der Frühphase Mitwirkende finden.', url: 'https://novawerk.io', logo: '/logos/novawerk.svg' },
+      { name: 'Aaden POS', kind: 'Projekt · KI im Betrieb', d: 'Kassensystem (POS). Wir haben im laufenden Betrieb von Aaden mehrere KI-Agenten eingesetzt und so Betriebs- und Automatisierungskosten gesenkt.', url: '', logo: '' },
+      { name: 'Lengsaeb Booking', kind: 'Eigenes Produkt', d: 'Unser selbst entwickeltes Buchungssystem für Veranstaltungsorte: Online-Reservierung und Verwaltung.', url: '', logo: '' },
     ],
   },
   steps: [
