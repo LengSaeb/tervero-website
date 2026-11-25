@@ -48,7 +48,7 @@ const zh: Dictionary = {
     fde: {
       title: '前线部署工程（FDE）',
       tag: '工程师嵌入您的团队',
-      short: '我们的前线部署工程师嵌入您的团队，在您现有的系统中构建、集成并上线，直到您的团队能够独立运维。',
+      short: '我们的前线部署工程师嵌入您的团队，在您现有的环境中构建、集成并上线系统，直到您的团队能够独立运维。',
       advise: ['技术方案与架构评审', '交付计划与里程碑'],
       deliver: ['工程师加入您的团队共同交付', '系统集成与欧盟部署', '对接您的欧洲客户与合作伙伴', '交接、文档与知识转移'],
     },
@@ -83,7 +83,7 @@ const zh: Dictionary = {
     lead: '与我们合作的伙伴，以及我们参与过的项目。',
     items: [
       { name: 'Novawerk', kind: '合作伙伴 · AI 运营', d: '开放的非营利社区。我们为 Novawerk 搭建了日常运营用的 AI 智能体：起草邮件、准备会议、维护任务看板。所有对外内容都由成员审核后才发出。', url: 'https://novawerk.io', logo: '/logos/novawerk.svg' },
-      { name: 'Aaden POS', kind: '项目案例 · AI 运营', d: '面向欧洲零售和餐饮门店的收银系统。我们在 Aaden 的日常运营中部署了多个 AI 智能体，降低运营成本和自动化开销。', url: 'https://aaden-pos.com', logo: 'https://aaden-pos.com/wp-content/uploads/2024/08/cropped-Logo-ohne-SchriftPC-192x192.png' },
+      { name: 'Aaden POS', kind: '项目案例 · AI 运营', d: '面向欧洲零售和餐饮门店的收银系统。我们在 Aaden 的日常运营中部署了多个 AI 智能体，降低运营成本和自动化开销。', url: 'https://aaden-pos.com', logo: '/logos/aaden.png' },
       { name: 'Lengsaeb Booking', kind: '自研产品 · 合规与 AI', d: '面向蹦床馆、攀岩馆等休闲场馆的票务、收银与会员系统，符合德国收银法规（TSE、DSFinV-K）。我们正在为它开发 AI 电话助理：自动接听来电、回答问题并直接完成预订。', url: 'https://site.lengsaeb.com', logo: '/logos/lengsaeb.svg' },
     ],
   },
@@ -109,7 +109,7 @@ const zh: Dictionary = {
   },
   contact: {
     title: '联系',
-    lead: '告诉我们您在欧洲的计划，我们会在两个工作日内回复。',
+    lead: '请简单介绍您的产品和目标市场，我们会在两个工作日内回复。',
     name: '姓名',
     company: '公司',
     email: '邮箱',
@@ -130,7 +130,7 @@ const zh: Dictionary = {
     draft: '草稿。公司信息将在商业登记完成后补全。',
   },
   footer: {
-    tagline: '中国企业在欧洲的合规与交付伙伴。',
+    tagline: '为在欧盟开展业务的中国企业提供合规、工程与 AI 服务。',
   },
   notFound: { title: '页面不存在', text: '您访问的页面不存在。', home: '返回首页' },
 };

@@ -84,7 +84,7 @@ const de: Dictionary = {
     lead: 'Partner, mit denen wir arbeiten, und Projekte, an denen wir beteiligt waren.',
     items: [
       { name: 'Novawerk', kind: 'Partner · KI im Betrieb', d: 'Eine offene Non-Profit-Community. Wir haben die KI-Agenten aufgebaut, die den Arbeitsalltag erledigen: E-Mails entwerfen, Meetings vorbereiten, das Aufgabenboard pflegen. Nach außen geht nichts ohne Freigabe eines Mitglieds.', url: 'https://novawerk.io', logo: '/logos/novawerk.svg' },
-      { name: 'Aaden POS', kind: 'Projekt · KI im Betrieb', d: 'Kassensystem für Handel und Gastronomie in Europa. Wir haben im laufenden Betrieb von Aaden mehrere KI-Agenten eingesetzt und so Betriebs- und Automatisierungskosten gesenkt.', url: 'https://aaden-pos.com', logo: 'https://aaden-pos.com/wp-content/uploads/2024/08/cropped-Logo-ohne-SchriftPC-192x192.png' },
+      { name: 'Aaden POS', kind: 'Projekt · KI im Betrieb', d: 'Kassensystem für Handel und Gastronomie in Europa. Wir haben im laufenden Betrieb von Aaden mehrere KI-Agenten eingesetzt und so Betriebs- und Automatisierungskosten gesenkt.', url: 'https://aaden-pos.com', logo: '/logos/aaden.png' },
       { name: 'Lengsaeb Booking', kind: 'Eigenes Produkt · Compliance und KI', d: 'Tickets, Kasse und Kundenbindung für Freizeitanlagen wie Trampolinparks und Kletterhallen, konform mit den deutschen Kassenvorgaben (TSE, DSFinV-K). Wir entwickeln dafür einen KI-Telefonassistenten, der Anrufe annimmt, Fragen beantwortet und direkt bucht.', url: 'https://site.lengsaeb.com', logo: '/logos/lengsaeb.svg' },
     ],
   },
@@ -110,7 +110,7 @@ const de: Dictionary = {
   },
   contact: {
     title: 'Kontakt',
-    lead: 'Erzählen Sie uns von Ihren Plänen in Europa. Wir antworten innerhalb von zwei Werktagen.',
+    lead: 'Beschreiben Sie kurz Ihr Produkt und Ihre Zielmärkte. Wir antworten innerhalb von zwei Werktagen.',
     name: 'Name',
     company: 'Unternehmen',
     email: 'E-Mail',
@@ -131,7 +131,7 @@ const de: Dictionary = {
     draft: 'Entwurf. Die Unternehmensangaben werden nach der Eintragung ins Handelsregister ergänzt.',
   },
   footer: {
-    tagline: 'Compliance und Umsetzung für Unternehmen aus China in Europa.',
+    tagline: 'Compliance, Engineering und KI für chinesische Unternehmen mit Geschäft in der EU.',
   },
   notFound: { title: 'Seite nicht gefunden', text: 'Diese Seite existiert nicht.', home: 'Zur Startseite' },
 };

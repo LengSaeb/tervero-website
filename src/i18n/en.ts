@@ -86,7 +86,7 @@ const en = {
     lead: 'Partners we work with and projects we have worked on.',
     items: [
       { name: 'Novawerk', kind: 'Partner · AI in operations', d: 'An open, non-profit community. We built the AI agents that run its day-to-day work: drafting emails, preparing meetings and keeping the task board in order. Nothing goes out until a member has approved it.', url: 'https://novawerk.io', logo: '/logos/novawerk.svg' },
-      { name: 'Aaden POS', kind: 'Project · AI in operations', d: 'Point-of-sale system for retail and restaurants in Europe. We deployed several AI agents in Aaden’s day-to-day operations, lowering operating and automation costs.', url: 'https://aaden-pos.com', logo: 'https://aaden-pos.com/wp-content/uploads/2024/08/cropped-Logo-ohne-SchriftPC-192x192.png' },
+      { name: 'Aaden POS', kind: 'Project · AI in operations', d: 'Point-of-sale system for retail and restaurants in Europe. We deployed several AI agents in Aaden’s day-to-day operations, lowering operating and automation costs.', url: 'https://aaden-pos.com', logo: '/logos/aaden.png' },
       { name: 'Lengsaeb Booking', kind: 'Our product · Compliance and AI', d: 'Tickets, till and loyalty for leisure venues such as trampoline parks and climbing gyms, compliant with German till rules (TSE, DSFinV-K). We are building an AI phone assistant for it that answers calls, handles questions and books directly into the system.', url: 'https://site.lengsaeb.com', logo: '/logos/lengsaeb.svg' },
     ],
   },
@@ -112,7 +112,7 @@ const en = {
   },
   contact: {
     title: 'Contact',
-    lead: 'Tell us what you are planning in Europe. We reply within two working days.',
+    lead: 'Tell us briefly about your product and target markets. We reply within two working days.',
     name: 'Name',
     company: 'Company',
     email: 'Email',
@@ -133,7 +133,7 @@ const en = {
     draft: 'Draft. Company details will be completed after commercial register entry.',
   },
   footer: {
-    tagline: 'Compliance and delivery for companies from China in Europe.',
+    tagline: 'Compliance, engineering and AI for Chinese companies doing business in the EU.',
   },
   notFound: { title: 'Page not found', text: 'This page does not exist.', home: 'Back to home' },
 };
