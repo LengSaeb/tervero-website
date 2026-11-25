@@ -33,7 +33,7 @@ src/
   layouts/Base.astro   <head>, hreflang, header, footer, mobile CTA dock
   components/          Header, Footer, Dock, Route, ServiceCards, EprCheck
   pages/index.astro    root: redirects to the visitor's language (default en)
-  pages/[lang]/        home, services, about, contact, impressum, privacy
+  pages/[lang]/        home, services, engagement, about, contact, impressum, privacy
 ```
 
 ## Content workflow

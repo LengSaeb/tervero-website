@@ -1,54 +1,73 @@
 ---
 import Base from '../../layouts/Base.astro';
-import ServiceCards from '../../components/ServiceCards.astro';
+import Tracks from '../../components/Tracks.astro';
 import { t, href, localePaths, type Locale } from '../../i18n';
 
 export const getStaticPaths = localePaths;
 const locale = Astro.params.lang as Locale;
 const d = t(locale);
+const h = d.home;
 ---
 
 <Base locale={locale}>
   <section class="hero band">
     <div class="wrap">
-      <h1>{d.home.h1}</h1>
-      <p class="lead">{d.home.lead}</p>
+      <h1>{h.h1}</h1>
+      <p class="lead">{h.lead}</p>
       <div class="ctas">
         <a class="btn primary" href={href(locale, 'contact')}>{d.cta.book}</a>
-        <a class="btn signal" href={href(locale, 'services')}>{d.cta.servicesShort}</a>
+        <a class="btn" href={href(locale, 'engagement')}>{d.cta.engagement}</a>
       </div>
+      <Tracks locale={locale} />
+    </div>
+  </section>
+
+  <section class="band paper">
+    <div class="wrap split">
+      <h2 class="statement">{h.statementTitle}</h2>
+      <div>{h.statement.map((p) => <p>{p}</p>)}</div>
     </div>
   </section>
 
   <section class="band">
     <div class="wrap">
-      <h2>{d.home.servicesTitle}</h2>
-      <p class="muted">{d.home.servicesLead}</p>
-      <ServiceCards locale={locale} />
+      <h2>{h.engageTitle}</h2>
+      <p class="muted">{h.engageLead}</p>
+      <div class="grid three models">
+        {d.engagement.models.map((m) => (
+          <a class="card" href={href(locale, 'engagement')}>
+            <h3>{m.t}</h3>
+            <p>{m.d}</p>
+            <span class="more">{d.cta.more} →</span>
+          </a>
+        ))}
+      </div>
     </div>
   </section>
 
   <section class="band paper">
     <div class="wrap">
-      <h2>{d.home.stepsTitle}</h2>
-      <ol class="steps">
-        {d.steps.map((s) => <li><b>{s.t}</b><span>{s.d}</span></li>)}
-      </ol>
+      <h2>{h.stepsTitle}</h2>
+      <ol class="steps">{d.steps.map((s) => <li><b>{s.t}</b><span>{s.d}</span></li>)}</ol>
     </div>
   </section>
 
   <section class="band cta-band">
     <div class="wrap">
-      <h2>{d.home.ctaTitle}</h2>
-      <p class="lead">{d.home.ctaText}</p>
-      <div class="ctas">
-        <a class="btn primary" href={href(locale, 'contact')}>{d.cta.book}</a>
-      </div>
+      <h2>{h.ctaTitle}</h2>
+      <p class="lead">{h.ctaText}</p>
+      <div class="ctas"><a class="btn primary" href={href(locale, 'contact')}>{d.cta.book}</a></div>
     </div>
   </section>
 </Base>
 
 <style>
-  .hero { padding-top: clamp(36px, 8vw, 88px); }
-  .cta-band { border-top: 6px solid var(--signal); background: var(--paper); }
+  .hero { padding-top: clamp(36px, 7vw, 80px); }
+  .hero h1 { font-size: clamp(36px, 7vw, 68px); max-width: 15em; }
+  .statement { font-size: clamp(26px, 4vw, 40px); }
+  .models .card { display: flex; flex-direction: column; color: inherit; text-decoration: none; }
+  .models .card:hover { border-color: var(--ink); }
+  .more { margin-top: auto; padding-top: 8px; font-weight: 700; font-size: 14px; color: var(--link); }
+  .cta-band { background: var(--signal); }
+  .cta-band .lead { color: #222; }
 </style>

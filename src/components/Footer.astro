@@ -13,12 +13,18 @@ const year = new Date().getFullYear();
       <p class="name">{site.brand} <span>{site.brandZh}</span></p>
       <p class="small">{d.footer.tagline}</p>
     </div>
+    <nav aria-label={d.nav.services}>
+      <b>{d.nav.services}</b>
+      {(['compliance', 'fde', 'ai'] as const).map((k) => <a href={`${href(locale, 'services')}#${k}`}>{d.services[k].title}</a>)}
+    </nav>
     <nav aria-label="Footer">
-      <a href={href(locale, 'services')}>{d.nav.services}</a>
+      <b>{site.brand}</b>
+      <a href={href(locale, 'engagement')}>{d.nav.engagement}</a>
       <a href={href(locale, 'about')}>{d.nav.about}</a>
       <a href={href(locale, 'contact')}>{d.nav.contact}</a>
     </nav>
     <nav aria-label="Legal">
+      <b>{d.legal.heading}</b>
       <a href={href(locale, 'impressum')}>{d.legal.impressum}</a>
       <a href={href(locale, 'privacy')}>{d.legal.privacy}</a>
     </nav>
@@ -32,8 +38,9 @@ const year = new Date().getFullYear();
   .name { font-weight: 800; font-size: 18px; margin: 0 0 4px; }
   .name span { font-weight: 500; color: var(--mute); }
   nav { display: flex; flex-direction: column; gap: 2px; }
+  nav b { font-size: 14px; margin-bottom: 4px; }
   nav a { color: var(--ink); text-decoration: none; padding: 6px 0; }
   nav a:hover { text-decoration: underline; }
   .copy { margin-top: 20px; }
-  @media (min-width: 720px) { .cols { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr); } }
+  @media (min-width: 720px) { .cols { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.4fr) minmax(0, 1fr) minmax(0, 1fr); } }
 </style>
