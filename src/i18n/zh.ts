@@ -3,7 +3,7 @@ import type { Dictionary } from './en';
 const zh: Dictionary = {
   meta: {
     title: '泰帆诺 Tervero：中国企业进入欧洲的工程、AI 与欧盟合规伙伴',
-    description: '为中国企业提供欧洲驻场工程（FDE）、在生产级系统中部署 AI 能力与应用，以及从咨询到落地的欧盟合规服务。',
+    description: '为中国企业提供 FDE 前置部署工程、在生产级系统中部署 AI 能力与应用，以及从咨询到落地的欧盟合规服务。',
   },
   nav: {
     services: '服务',
@@ -25,9 +25,9 @@ const zh: Dictionary = {
   },
   home: {
     h1: '在欧洲落地，持续合规。',
-    lead: '为进入欧洲的中国企业提供三条服务线：合规咨询与落地、欧洲 FDE 驻场工程，以及在生产级系统中部署 AI 能力与应用。',
+    lead: '为进入欧洲的中国企业提供三条服务线：合规咨询与落地、FDE 前置部署工程，以及在生产级系统中部署 AI 能力与应用。',
     facts: [
-      ['欧洲现场', '工程师驻场交付'],
+      ['FDE 模式', '我们出人，帮你落地'],
       ['3 条服务线', '合规 · 工程 · AI'],
       ['3 种语言', '中 · 英 · 德'],
     ],
@@ -35,7 +35,7 @@ const zh: Dictionary = {
     stations: [
       { name: '评估', note: '市场、法规与风险', service: 'compliance' },
       { name: '合规', note: 'CE、GPSR、EPR、DPP、GDPR', service: 'compliance' },
-      { name: '工程落地', note: '工程师在欧洲现场', service: 'fde' },
+      { name: '工程落地', note: '工程师加入你的团队', service: 'fde' },
       { name: '接入 AI', note: '部署进生产系统', service: 'ai' },
       { name: '运营', note: '客户、伙伴与支持', service: 'fde' },
       { name: '持续合规', note: '监测与更新', service: 'compliance' },
@@ -45,12 +45,10 @@ const zh: Dictionary = {
     scenariosTitle: '你现在处在哪种情况？',
     scenarios: [
       { t: '要进入欧盟市场', d: '我们梳理你的产品适用哪些法规，补齐缺口，把注册和文件真正做完。' },
-      { t: '需要欧洲本地工程师', d: '我们的工程师在欧洲现场对接你的客户和伙伴，把市场要求直接做进你的系统。' },
+      { t: '需要有人把事情做出来', d: '我们派出 FDE 工程师加入你的团队，对接你的欧洲客户和伙伴，把市场要求直接做进你的系统。' },
       { t: '要把 AI 用进生产', d: '我们把 AI 从试点带到生产环境：接入现有系统，可监控，并符合欧盟规则。' },
     ],
     stepsTitle: '我们怎么做',
-    toolsTitle: '工具',
-    toolsLead: '几分钟给出初步答案的免费小工具。德国 EPR 自检是第一个，更多工具陆续推出。',
     timelineTitle: '欧盟关键日期',
     timelineNote: '简化版，具体日期以欧盟官方公报为准。',
     ctaTitle: '发货之前，先聊一聊',
@@ -63,8 +61,8 @@ const zh: Dictionary = {
       items: ['CE、GPSR、EPR 注册', '技术文件与标签', '欧盟责任人与授权代表', '数字产品护照就绪'],
     },
     fde: {
-      title: '欧洲 FDE 驻场工程',
-      short: '工程师在欧洲现场，把合规要求直接做进你的产品与系统。',
+      title: 'FDE 前置部署工程',
+      short: '我们派出工程师加入你的团队，对结果负责，把方案真正落地到你的产品与系统中。',
       items: ['产品数据与 DPP 接入', '符合 GDPR 的数据流与欧盟部署', '网络韧性法案所需的安全更新与 SBOM', '直接对接你的欧洲客户与合作伙伴'],
     },
     ai: {
@@ -85,7 +83,7 @@ const zh: Dictionary = {
   steps: [
     { t: '评估', d: '30 分钟诊断通话' },
     { t: '定范围', d: '固定报价，书面确认' },
-    { t: '落地', d: '工程师与顾问在现场执行' },
+    { t: '落地', d: '工程师与顾问动手交付' },
     { t: '持续合规', d: '法规监测与年度复核' },
   ],
   timeline: [
