@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/logos/aaden.png",
+      "destination": "https://aaden-pos.com/wp-content/uploads/2024/08/cropped-Logo-ohne-SchriftPC-192x192.png"
+    }
+  ]
+}
