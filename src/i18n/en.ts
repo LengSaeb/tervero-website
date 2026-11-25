@@ -9,7 +9,7 @@ const en = {
   },
   nav: {
     services: 'Services',
-    check: 'Tools',
+    check: 'Products',
     insights: 'Insights',
     about: 'About',
     contact: 'Contact',
@@ -27,29 +27,9 @@ const en = {
   },
   home: {
     h1: 'Land in Europe. Stay compliant.',
-    lead: 'For companies from China entering the EU, three services under one roof: compliance consulting and implementation, forward-deployed engineering (FDE), and AI deployed into production systems.',
-    facts: [
-      ['FDE model', 'our engineers, your delivery'],
-      ['3 service lines', 'compliance · engineering · AI'],
-      ['3 languages', 'English · 中文 · Deutsch'],
-    ],
-    routeTitle: 'Your route into Europe: pick a step to see who helps',
-    stations: [
-      { name: 'Assess', note: 'market, rules and risks', service: 'compliance' },
-      { name: 'Comply', note: 'CE, GPSR, EPR, DPP, GDPR', service: 'compliance' },
-      { name: 'Build', note: 'engineers embedded in your team', service: 'fde' },
-      { name: 'Integrate AI', note: 'into production systems', service: 'ai' },
-      { name: 'Operate', note: 'customers, partners, support', service: 'fde' },
-      { name: 'Stay compliant', note: 'monitoring and updates', service: 'compliance' },
-    ],
+    lead: 'For companies from China entering the EU: from knowing which rules apply to systems that actually run.',
     servicesTitle: 'Three service lines',
     servicesLead: 'One team that understands both the regulations and the code.',
-    scenariosTitle: 'Where are you today?',
-    scenarios: [
-      { t: 'Entering the EU', d: 'We map which rules apply to your product, close the gaps and get the registrations and files done.' },
-      { t: 'Need people to get it built', d: 'We embed forward-deployed engineers in your team. They work with your EU customers and partners and build what the market requires into your systems.' },
-      { t: 'Bringing AI into production', d: 'We take AI from pilot to production: integrated, monitored and compliant with EU rules.' },
-    ],
     stepsTitle: 'How we work',
     timelineTitle: 'Key EU dates',
     timelineNote: 'Simplified. Always check the Official Journal of the EU for the binding dates.',
@@ -96,7 +76,7 @@ const en = {
     { date: '2027-12-11', text: 'CRA applies in full' },
   ],
   tools: {
-    title: 'Tools',
+    title: 'Products',
     lead: 'Small, free tools for a first orientation. They run in your browser; nothing is sent to us.',
     nextTitle: 'Coming next',
     next: ['Digital Product Passport readiness check', 'EU rules finder by product category'],
