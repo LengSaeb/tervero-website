@@ -2,8 +2,8 @@ import type { Dictionary } from './en';
 
 const zh: Dictionary = {
   meta: {
-    title: '泰帆诺 Tervero：您在欧洲的合规与交付团队',
-    description: '面向中国企业的欧盟合规、前线部署工程（FDE）与 AI 生产落地服务。',
+    title: '泰帆诺 Tervero：您在欧洲的智能体合规和交付团队',
+    description: '面向中国企业的欧盟合规、前线部署工程（FDE）与 AI 智能体落地服务。',
   },
   nav: {
     services: '服务',
@@ -24,8 +24,8 @@ const zh: Dictionary = {
     more: '了解更多',
   },
   home: {
-    h1: '您在欧洲的\u200B合规与交付团队',
-    caption: '欧盟合规 · 前线部署工程（FDE） · AI 生产落地',
+    h1: '您在欧洲的\u200B智能体合规和交付团队',
+    caption: '欧盟合规 · 前线部署工程（FDE） · AI 智能体落地',
     manifesto: '我们制定方案，并负责实施',
     problemTitle: '从合规到交付，一个团队全部完成',
     problemText: '法规梳理、技术文件、标签、系统改造，一直到产品上市，都由同一个团队的顾问和工程师完成。',
@@ -53,7 +53,7 @@ const zh: Dictionary = {
       deliver: ['工程师加入您的团队共同交付', '系统集成与欧盟部署', '对接您的欧洲客户与合作伙伴', '交接、文档与知识转移'],
     },
     ai: {
-      title: 'AI 生产落地',
+      title: 'AI 智能体落地',
       tag: '接入现有系统',
       short: '把 AI 接入您正在运行的生产系统，配套监控、评估，以及欧盟《人工智能法》要求的管控措施。',
       advise: ['业务场景筛选与可行性评估', '架构、数据与《人工智能法》合规设计'],

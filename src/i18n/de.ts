@@ -4,7 +4,7 @@ const de: Dictionary = {
   meta: {
     title: 'Tervero: EU-Compliance und Umsetzung für chinesische Unternehmen',
     description:
-      'EU-Compliance, Forward-Deployed Engineering und KI im Produktivbetrieb für Unternehmen aus China.',
+      'EU-Compliance, Forward-Deployed Engineering und Einführung von KI-Agenten für Unternehmen aus China.',
   },
   nav: {
     services: 'Leistungen',
@@ -25,8 +25,8 @@ const de: Dictionary = {
     more: 'Mehr erfahren',
   },
   home: {
-    h1: 'Ihr Team für Compliance und Umsetzung in Europa.',
-    caption: 'EU-Compliance · Forward-Deployed Engineering · KI im Produktivbetrieb',
+    h1: 'Ihr Team in Europa für Compliance und Umsetzung von KI-Agenten.',
+    caption: 'EU-Compliance · Forward-Deployed Engineering · Einführung von KI-Agenten',
     manifesto: 'Wir erstellen den Plan und setzen ihn um.',
     problemTitle: 'Von der Compliance bis zur Umsetzung: ein Team für alles.',
     problemText: 'Regelprüfung, technische Unterlagen, Kennzeichnung, Systemänderungen und Markteinführung: Unsere Berater und Ingenieure erledigen alles in einem Team.',
@@ -54,7 +54,7 @@ const de: Dictionary = {
       deliver: ['Ingenieure, die in Ihrem Team mitarbeiten', 'Systemintegration und Betrieb in der EU', 'Zusammenarbeit mit Ihren Kunden und Partnern in Europa', 'Übergabe, Dokumentation und Wissenstransfer'],
     },
     ai: {
-      title: 'KI im Produktivbetrieb',
+      title: 'Einführung von KI-Agenten',
       tag: 'In Ihre laufenden Systeme',
       short: 'Wir integrieren KI in Ihre bestehenden Produktivsysteme, mit Monitoring, Evaluierung und den Kontrollen, die der AI Act verlangt.',
       advise: ['Auswahl der Anwendungsfälle und Machbarkeit', 'Architektur, Daten und AI-Act-Konzept'],

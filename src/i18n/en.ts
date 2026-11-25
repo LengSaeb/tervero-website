@@ -3,9 +3,9 @@
 
 const en = {
   meta: {
-    title: 'Tervero: your compliance and delivery team in Europe',
+    title: 'Tervero: your AI agent compliance and delivery team in Europe',
     description:
-      'EU compliance, forward-deployed engineering and AI in production systems for companies from China.',
+      'EU compliance, forward-deployed engineering and AI agent deployment for companies from China.',
   },
   nav: {
     services: 'Services',
@@ -26,8 +26,8 @@ const en = {
     more: 'Learn more',
   },
   home: {
-    h1: 'Your compliance and delivery team in Europe.',
-    caption: 'EU compliance · Forward-deployed engineering · AI in production',
+    h1: 'Your AI agent compliance and delivery team in Europe.',
+    caption: 'EU compliance · Forward-deployed engineering · AI agent deployment',
     manifesto: 'We write the plan and carry it out.',
     problemTitle: 'From compliance to delivery, one team does it all.',
     problemText: 'Rule mapping, technical files, labels, system changes and market launch: our consultants and engineers handle all of it in one team.',
@@ -55,7 +55,7 @@ const en = {
       deliver: ['Engineers who work inside your team', 'System integration and EU deployment', 'Working with your EU customers and partners', 'Handover, documentation and knowledge transfer'],
     },
     ai: {
-      title: 'AI in production',
+      title: 'AI agent deployment',
       tag: 'Into the systems you run',
       short: 'We integrate AI into the systems you already run, with monitoring, evaluation and the controls the EU AI Act requires.',
       advise: ['Use-case selection and feasibility', 'Architecture, data and AI Act design'],
